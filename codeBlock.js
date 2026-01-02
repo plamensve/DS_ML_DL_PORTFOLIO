@@ -18,21 +18,41 @@ document.addEventListener("DOMContentLoaded", () => {
         isActive = false;
     }
 
+    // 🔑 INITIAL CHECK (ключовото)
+    function checkInitialPosition() {
+        const rect = codeBlock.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        const visibleHeight =
+            Math.min(rect.bottom, viewportHeight) -
+            Math.max(rect.top, 0);
+
+        const ratio = visibleHeight / rect.height;
+
+        if (ratio >= 0.8) {
+            activate();
+        }
+    }
+
     const observer = new IntersectionObserver(
         ([entry]) => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
+            const ratio = entry.intersectionRatio;
+
+            // ENTER
+            if (ratio >= 0.8) {
                 activate();
             }
 
-            if (!entry.isIntersecting) {
+            // EXIT – напълно извън viewport
+            if (ratio === 0) {
                 deactivate();
             }
         },
         {
-            threshold: [0, 0.7],
-            rootMargin: "-10% 0px -10% 0px"
+            threshold: [0, 0.8]
         }
     );
 
     observer.observe(codeBlock);
+    checkInitialPosition(); // 🔥 това решава проблема
 });
