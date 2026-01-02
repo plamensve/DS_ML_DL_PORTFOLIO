@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ([entry]) => {
             if (entry.intersectionRatio >= 0.4) {
                 skillsGrid.classList.add("is-active");
-                observer.disconnect(); // 🔑 само веднъж
+                observer.disconnect();
             }
         },
         {

@@ -1,34 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector("#about");
     const codeBlock = document.querySelector(".code-block");
-    if (!codeBlock) return;
+    const header = document.querySelector(".header");
+
+    if (!section || !codeBlock || !header) return;
 
     let isActive = false;
 
-    function update() {
-        const rect = codeBlock.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+    function updateState() {
+        const scrollTop = window.scrollY;
+        const headerHeight = header.offsetHeight;
 
-        // колко % от code-block е навлязло отгоре
-        const visibleFromTop = viewportHeight - rect.top;
-        const progress = visibleFromTop / rect.height;
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-        // АКТИВАЦИЯ – когато сме навлезли поне 80%
-        if (progress >= 0.8 && !isActive) {
-            codeBlock.classList.add("is-active");
-            document.body.classList.add("is-dark-mode");
-            isActive = true;
-        }
+        const enteredSection = scrollTop + headerHeight >= sectionTop;
+        const leftSection = scrollTop >= sectionBottom;
 
-        // ДЕАКТИВАЦИЯ – когато напълно излезе
-        if (rect.bottom <= 0 && isActive) {
-            codeBlock.classList.remove("is-active");
-            document.body.classList.remove("is-dark-mode");
-            isActive = false;
+        if (enteredSection && !leftSection) {
+            // ВЪТРЕ В СЕКЦИЯТА
+            if (!isActive) {
+                codeBlock.classList.add("is-active");
+                document.body.classList.add("is-dark-mode");
+                isActive = true;
+            }
+        } else {
+            // ИЗВЪН СЕКЦИЯТА (и нагоре, и надолу)
+            if (isActive) {
+                codeBlock.classList.remove("is-active");
+                document.body.classList.remove("is-dark-mode");
+                isActive = false;
+            }
         }
     }
 
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-
-    update(); // initial check
+    window.addEventListener("scroll", updateState, { passive: true });
+    window.addEventListener("resize", updateState);
+    updateState();
 });
