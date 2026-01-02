@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const ratio = visibleHeight / rect.height;
 
-        if (ratio >= 0.95) {
+        if (ratio >= 0.97) {
             activate();
         }
     }
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ratio = entry.intersectionRatio;
 
             // ENTER
-            if (ratio >= 0.95) {
+            if (ratio >= 0.97) {
                 activate();
             }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
         {
-            threshold: [0, 0.8]
+            threshold: [0, 0.97]
         }
     );
 
