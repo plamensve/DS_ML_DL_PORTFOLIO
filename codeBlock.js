@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const ratio = visibleHeight / rect.height;
 
-        if (ratio >= 0.9) {
+        if (ratio >= 0.95) {
             activate();
         }
     }
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ratio = entry.intersectionRatio;
 
             // ENTER
-            if (ratio >= 0.9) {
+            if (ratio >= 0.95) {
                 activate();
             }
 
