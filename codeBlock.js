@@ -8,22 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
         ([entry]) => {
             const ratio = entry.intersectionRatio;
 
-            // ENTER
-            if (ratio > 0.70 && !isActive) {
+            // ENTER: поне 80% видимост
+            if (ratio >= 0.8 && !isActive) {
                 codeBlock.classList.add("is-active");
                 document.body.classList.add("is-dark-mode");
                 isActive = true;
             }
 
-            // EXIT
-            if (ratio < 0.5 && isActive) {
+            // EXIT: напълно извън viewport
+            if (ratio === 0 && isActive) {
                 codeBlock.classList.remove("is-active");
                 document.body.classList.remove("is-dark-mode");
                 isActive = false;
             }
         },
         {
-            threshold: [0, 0.2, 0.95, 1]
+            threshold: [0, 0.8]
         }
     );
 
