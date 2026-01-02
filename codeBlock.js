@@ -18,41 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
         isActive = false;
     }
 
-
-    function checkInitialPosition() {
-        const rect = codeBlock.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        const visibleHeight =
-            Math.min(rect.bottom, viewportHeight) -
-            Math.max(rect.top, 0);
-
-        const ratio = visibleHeight / rect.height;
-
-        if (ratio >= 0.99) {
-            activate();
-        }
-    }
-
     const observer = new IntersectionObserver(
         ([entry]) => {
-            const ratio = entry.intersectionRatio;
-
-            // ENTER
-            if (ratio >= 0.99) {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
                 activate();
             }
 
-            // EXIT
-            if (ratio === 0) {
+            if (!entry.isIntersecting) {
                 deactivate();
             }
         },
         {
-            threshold: [0, 0.99]
+            threshold: [0, 0.7],
+            rootMargin: "-10% 0px -10% 0px"
         }
     );
 
     observer.observe(codeBlock);
-    checkInitialPosition();
 });
