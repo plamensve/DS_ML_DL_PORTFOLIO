@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 isActive = true;
             }
 
-            // EXIT
-            if (ratio < 0.5 && isActive) {
-                codeBlock.classList.remove("is-active");
-                document.body.classList.remove("is-dark-mode");
-                isActive = false;
-            }
+            // // EXIT
+            // if (ratio < 0.5 && isActive) {
+            //     codeBlock.classList.remove("is-active");
+            //     document.body.classList.remove("is-dark-mode");
+            //     isActive = false;
+            // }
         },
         {
             threshold: [0, 0.2, 0.95, 1]
