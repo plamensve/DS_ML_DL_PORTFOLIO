@@ -9,21 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const ratio = entry.intersectionRatio;
 
             // ENTER
-            if (ratio > 0.7 && !isActive) {
+            if (ratio > 0.8 && !isActive) {
                 codeBlock.classList.add("is-active");
                 document.body.classList.add("is-dark-mode");
                 isActive = true;
             }
 
             // EXIT
-            if (ratio < 0.7 && isActive) {
+            if (ratio < 0.8 && isActive) {
                 codeBlock.classList.remove("is-active");
                 document.body.classList.remove("is-dark-mode");
                 isActive = false;
             }
         },
         {
-            threshold: [0, 0.2, 0.7, 1]
+            threshold: [0, 0.2, 0.8, 1]
         }
     );
 
