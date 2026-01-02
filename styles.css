@@ -542,6 +542,105 @@ body.is-dark-mode .nav-links a::after {
     box-shadow: 0 25px 50px rgba(99,102,241,0.25);
 }
 
+/* ================= SKILLS ENHANCEMENTS ================= */
+
+.section-lead {
+    color: var(--text-muted);
+    margin-top: -8px;
+}
+
+.skill-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.skill-head h3 {
+    margin: 0;
+}
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    background: rgba(99,102,241,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(99,102,241,0.25);
+}
+
+.skill-badge.is-secondary {
+    background: rgba(16,185,129,0.12);
+    color: #10b981;
+    border-color: rgba(16,185,129,0.25);
+}
+
+.skill-badge.is-tertiary {
+    background: rgba(234,88,12,0.12);
+    color: #ea580c;
+    border-color: rgba(234,88,12,0.25);
+}
+
+.skill-chips {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ffffff, rgba(255,255,255,0.7));
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    font-size: 0.86rem;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+}
+
+.chip:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.meter {
+    position: relative;
+    height: 10px;
+    background: rgba(15,23,42,0.06);
+    border: 1px solid var(--border-glass);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.meter span {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    border-right: 1px solid rgba(255,255,255,0.6);
+    box-shadow: inset 0 0 12px rgba(255,255,255,0.3);
+    transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+.skills-grid.is-active .meter span {
+    width: var(--value);
+}
+
 
 /* ================= PROJECTS GRID ================= */
 
@@ -641,15 +740,629 @@ body.is-dark-mode .nav-links a::after {
 
 
 
-/* ================= FOOTER ================= */
-
-.footer {
-    padding: 40px 0;
-    background: linear-gradient(180deg, #e0f2fe, #f8fafc);
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+/* ================= GLOBAL ENHANCEMENTS ================= */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
+
+/* ================= SITE FOOTER v2 (Professional, Cyan on Deep Navy) ================= */
+.footer {
+    /* Color system localized to the footer */
+    --footer-bg-1: #0f172a; /* requested deep navy */
+    --footer-bg-2: #0f172a; /* uniform base for subtle gradient */
+    --footer-text: #bff4fb; /* cyan 200–300 */
+    --footer-muted: rgba(191, 244, 251, 0.78);
+    --footer-border: rgba(191, 244, 251, 0.18);
+    --footer-surface: rgba(255, 255, 255, 0.05);
+    --accent: #67e8f9;          /* cyan */
+    --accent-secondary: #06b6d4; /* deeper cyan */
+
+    /* Background dynamics */
+    --glow-a: rgba(56, 189, 248, 0.12); /* cyan glow */
+    --glow-b: rgba(99, 102, 241, 0.10); /* indigo glow */
+    --grid-alpha: 0.06;                /* grid visibility */
+    --grid-speed: 32s;                 /* slow drift */
+
+    position: relative;
+    /* Remove gap above footer so Contact section sits flush */
+    margin-top: 0;
+    padding: 84px 0 28px;
+    color: var(--footer-text);
+    background:
+        radial-gradient(120% 140% at 15% 0%, var(--glow-a) 0%, rgba(0,0,0,0) 60%),
+        radial-gradient(100% 120% at 85% 6%, var(--glow-b) 0%, rgba(0,0,0,0) 55%),
+        linear-gradient(180deg, var(--footer-bg-2), var(--footer-bg-1));
+    border-top: 1px solid var(--footer-border);
+    overflow: hidden;
+}
+
+/* Make the Contact section stick to the footer with no extra gap */
+#contact.section {
+    padding-bottom: 0;
+}
+
+/* Elegant curved top divider */
+.footer::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: -48px; height: 96px;
+    background:
+      radial-gradient(120% 100% at 50% 100%, rgba(103,232,249,0.18) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+/* Subtle cyan grid overlay */
+.footer::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(103,232,249,var(--grid-alpha)) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(103,232,249,var(--grid-alpha)) 0 1px, transparent 1px 40px);
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+    transform: translateZ(0);
+    animation: footer-grid-pan var(--grid-speed) linear infinite;
+}
+
+@keyframes footer-grid-pan {
+    from { transform: translate3d(0,0,0); }
+    to   { transform: translate3d(40px,0,0); }
+}
+@media (prefers-reduced-motion: reduce) { .footer::after { animation: none; } }
+
+.footer .container { position: relative; z-index: 1; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 32px;
+}
+
+.footer-brand .logo {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-brand .tagline {
+    color: var(--footer-muted);
+    margin-top: 8px;
+}
+
+.footer-badges { list-style: none; margin: 14px 0 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.badge {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 12px;
+    border: 1px solid var(--footer-border);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    color: var(--footer-text);
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+}
+.badge.is-available {
+    border-color: rgba(16,185,129,0.35);
+    background: linear-gradient(180deg, rgba(16,185,129,0.12), rgba(16,185,129,0.04));
+    color: #86efac;
+}
+
+.footer-nav h4,
+.footer-contact h4 {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    margin: 0 0 12px;
+    color: var(--footer-text);
+}
+
+.footer-nav ul,
+.footer-contact ul { list-style: none; padding: 0; margin: 0; }
+
+.footer-nav li + li { margin-top: 8px; }
+
+.footer a { color: var(--footer-text); text-decoration: none; }
+.footer a:hover { color: var(--accent); }
+
+.social-list { display: flex; flex-direction: column; gap: 10px; }
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--footer-border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035));
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    color: var(--footer-text);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.38);
+    border-color: rgba(6,182,212,0.5);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+}
+.social-link .icon { width: 1.1em; display: inline-flex; align-items: center; justify-content: center; }
+
+.footer .availability { color: var(--footer-muted); margin-top: 12px; font-size: 0.92rem; }
+
+.legal-bar {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid var(--footer-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--footer-muted);
+    font-size: 0.94rem;
+}
+
+.to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--footer-border);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+    color: var(--accent-secondary);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.to-top:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.36); color: var(--accent); }
+.to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Chevron icon */
+.to-top-icon {
+    width: 10px; height: 10px; display: inline-block;
+    border-left: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg) translateY(2px);
+}
+
+@media (max-width: 900px) {
+    .footer { padding: 68px 0 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+}
+
+@media (max-width: 640px) {
+    .footer { padding: 48px 0 18px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 18px; }
+    .legal-bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+@media (max-width: 360px) { .to-top { padding: 8px 12px; } }
+
+/* ================= CASE STUDIES (distinct from Skills) ================= */
+
+.projects-list {
+    display: grid;
+    gap: 36px;
+    margin-top: 42px;
+}
+
+.case-study {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    background: var(--card-bg);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(15,23,42,0.08);
+
+    transform: translateY(24px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1), opacity 0.6s ease, box-shadow 0.4s ease;
+}
+
+.projects-reveal.is-active .case-study {
+    transform: none;
+    opacity: 1;
+}
+
+.case-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(180deg, #eef2ff, #f8fafc);
+}
+
+/* CSS Decorative Art (replaces images) */
+.case-art {
+    position: absolute;
+    inset: 0;
+    display: block;
+    overflow: hidden;
+    /* Subtle depth */
+    transform: translateZ(0) scale(1.02);
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1), filter 0.8s ease;
+}
+
+.case-study:hover .case-art { transform: scale(1.06); }
+
+/* Shared layers via CSS variables */
+.case-art {
+    --art-bg1: #eef2ff;
+    --art-bg2: #f8fafc;
+    --c-accent: var(--accent);
+    --c-accent-2: var(--accent-secondary);
+    --c-info: #0284c7;
+    --c-success: #10b981;
+    --c-warn: #d97706;
+}
+
+/* Base animated shimmer (very subtle) */
+@keyframes art-pan-x { from { background-position-x: 0%; } to { background-position-x: 100%; } }
+@keyframes art-pan-y { from { background-position-y: 0%; } to { background-position-y: 100%; } }
+
+/* Theme: Risk Analysis – gridlines + heatmap dots + iso-waves */
+.art--risk {
+    background-image:
+        /* iso-wave */
+        radial-gradient(120% 80% at 0% 0%, rgba(99,102,241,0.10) 0%, rgba(99,102,241,0.00) 60%),
+        radial-gradient(120% 100% at 100% 100%, rgba(139,92,246,0.10) 0%, rgba(139,92,246,0.00) 65%),
+        /* heat dots */
+        radial-gradient(6px 6px at 20% 30%, rgba(99,102,241,0.45) 0, rgba(99,102,241,0.45) 40%, transparent 45%),
+        radial-gradient(7px 7px at 62% 58%, rgba(2,132,199,0.45) 0, rgba(2,132,199,0.45) 40%, transparent 45%),
+        radial-gradient(5px 5px at 78% 24%, rgba(217,119,6,0.45) 0, rgba(217,119,6,0.45) 40%, transparent 45%),
+        /* grid */
+        linear-gradient(var(--art-bg1), var(--art-bg2)),
+        repeating-linear-gradient(0deg, rgba(15,23,42,0.06) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(15,23,42,0.06) 0 1px, transparent 1px 40px);
+    background-size:
+        100% 100%, 100% 100%,
+        100% 100%, 100% 100%, 100% 100%,
+        100% 100%, 100% 100%, 100% 100%;
+    animation:
+        art-pan-x 14s linear infinite;
+}
+
+/* Theme: Segmentation – layered masks/contours */
+.art--seg {
+    --layer1: radial-gradient(60% 80% at 20% 60%, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.00) 65%);
+    --layer2: radial-gradient(70% 70% at 80% 30%, rgba(99,102,241,0.18) 0%, rgba(99,102,241,0.00) 70%);
+    --layer3: radial-gradient(40% 50% at 60% 80%, rgba(2,132,199,0.16) 0%, rgba(2,132,199,0.00) 75%);
+    --contours: repeating-conic-gradient(from 0deg, rgba(15,23,42,0.07) 0 6deg, transparent 6deg 12deg);
+    background:
+        var(--layer1), var(--layer2), var(--layer3),
+        linear-gradient(180deg, var(--art-bg1), var(--art-bg2));
+    -webkit-mask-image: var(--contours);
+    mask-image: var(--contours);
+    -webkit-mask-size: 200% 200%;
+    mask-size: 200% 200%;
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+    animation: art-pan-y 18s linear infinite;
+}
+
+/* Theme: EDA – conic chart arcs + rings */
+.art--eda {
+    background-image:
+        radial-gradient(closest-side, rgba(255,255,255,0.6), rgba(255,255,255,0.0) 70%),
+        conic-gradient(from -90deg, var(--c-accent) 0 25%, transparent 25% 50%, var(--c-accent-2) 50% 75%, transparent 75% 100%),
+        repeating-conic-gradient(from 0deg, rgba(15,23,42,0.08) 0 2deg, rgba(15,23,42,0.0) 2deg 6deg),
+        radial-gradient(120% 100% at 100% 0%, rgba(2,132,199,0.12) 0%, rgba(2,132,199,0.00) 60%),
+        linear-gradient(180deg, var(--art-bg1), var(--art-bg2));
+    background-size: 40% 40%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-position: 10% 15%, center, center, center, center;
+    animation: art-pan-x 20s linear infinite;
+}
+
+/* Reduced motion: stop decorative animations */
+@media (prefers-reduced-motion: reduce) {
+    .case-art, .art--risk, .art--seg, .art--eda { animation: none !important; }
+    .case-study:hover .case-art { transform: none; }
+}
+
+.case-body {
+    padding: 22px 22px 26px;
+}
+
+.case-title {
+    font-size: 1.35rem;
+    margin: 2px 0 10px;
+    position: relative;
+}
+
+.case-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 52px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+}
+
+.case-summary {
+    color: var(--text-muted);
+    margin: 16px 0 16px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 12px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 10px; /* square-ish ends to differ from fully rounded chips */
+    font-size: 0.78rem;
+    background: rgba(15,23,42,0.06);
+    color: var(--text);
+    border: 1px solid var(--border-glass);
+}
+
+.tag.is-info { color: #0284c7; background: rgba(2,132,199,0.12); border-color: rgba(2,132,199,0.25); }
+.tag.is-success { color: #10b981; background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.25); }
+.tag.is-warning { color: #d97706; background: rgba(217,119,6,0.12); border-color: rgba(217,119,6,0.25); }
+
+.case-meta {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.case-meta li span {
+    color: var(--text);
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.case-cta { margin-top: 16px; }
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-outline::after {
+    content: "→";
+    transition: transform 0.25s ease;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+    box-shadow: 0 12px 30px rgba(99,102,241,0.18);
+}
+
+.btn-outline:hover::after { transform: translateX(6px); }
+
+.btn-outline:focus-visible {
+    outline: 3px solid rgba(99,102,241,0.45);
+    outline-offset: 2px;
+}
+
+@media (min-width: 900px) {
+    .case-study {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 0;
+    }
+
+    .case-body { padding: 26px 28px; }
+
+    /* alternate media/content to create rhythm distinct from grid cards */
+    .case-study:nth-child(even) {
+        grid-template-columns: 1fr 1.2fr;
+    }
+    .case-study:nth-child(even) .case-media { order: 2; }
+    .case-study:nth-child(even) .case-body { order: 1; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .case-study { transition: none; transform: none !important; }
+    .case-media img { transition: none; }
+}
+
+
+
+/* ================= CONTACT ================= */
+
+/* Full-width professional band for Contact section, visually merging into the footer */
+#contact.section {
+    /* Stick to footer already handled below with padding-bottom: 0 */
+    /* Create a full-bleed visual band while keeping content centered via .container */
+    position: relative;
+    background:
+        radial-gradient(120% 140% at 10% -10%, rgba(103,232,249,0.10) 0%, rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+    border-top: 1px solid var(--border-glass);
+    padding: 96px 0 0; /* generous top rhythm, bottom is 0 to stick to footer */
+}
+
+/* Ensure text over the dark band remains readable while cards keep their own styling */
+#contact h2 {
+    color: #e6fbff; /* light cyan-tinted heading for better contrast on dark */
+}
+
+/* Center the Contact section content for a balanced, professional layout */
+#contact h2,
+#contact .contact-lead,
+#contact .contact-note { text-align: center; }
+
+/* Provide inner bottom breathing room so content isn't glued to the footer,
+   while keeping the full-bleed background flush with the footer */
+#contact .container { padding-bottom: 56px; }
+
+/* Center CTA grid items and cards */
+.cta-buttons { justify-items: center; }
+.contact-cta,
+.info-card { max-width: 960px; margin-inline: auto; }
+
+@media (max-width: 900px) {
+    #contact .container { padding-bottom: 48px; }
+}
+@media (max-width: 640px) {
+    #contact .container { padding-bottom: 40px; }
+}
+
+/* Keep the contact content above any decorative layers */
+#contact .container { position: relative; z-index: 1; }
+
+/* Optional subtle grid, softer than footer, for a cohesive system look */
+#contact.section::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(103,232,249,0.035) 0 1px, transparent 1px 44px),
+        repeating-linear-gradient(90deg, rgba(103,232,249,0.035) 0 1px, transparent 1px 44px);
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}
+
+.contact-cta {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-glass);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(99,102,241,0.18);
+    margin-top: 28px;
+}
+
+.contact-lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.cta-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+/* Better responsiveness for CTA buttons on narrower widths */
+@media (max-width: 900px) {
+    .cta-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+    .cta-buttons { grid-template-columns: 1fr; }
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--border-glass);
+    background: rgba(255,255,255,0.9);
+    color: var(--text-main);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(99,102,241,0.22);
+}
+
+.btn-cta .icon { font-size: 1.1rem; }
+
+/* Color accents */
+.btn-cta.is-email {
+    background: linear-gradient(180deg, #fff, #f8fafc);
+    border-color: rgba(14,165,233,0.35);
+}
+.btn-cta.is-email:hover { border-color: rgba(14,165,233,0.55); }
+
+.btn-cta.is-linkedin {
+    background: linear-gradient(180deg, #fff, #eef2ff);
+    border-color: rgba(99,102,241,0.35);
+}
+.btn-cta.is-linkedin:hover { border-color: rgba(99,102,241,0.55); }
+
+.btn-cta.is-github {
+    background: linear-gradient(180deg, #fff, #f1f5f9);
+    border-color: rgba(15,23,42,0.2);
+}
+.btn-cta.is-github:hover { border-color: rgba(15,23,42,0.4); }
+
+.btn-cta.is-copy {
+    background: rgba(99,102,241,0.08);
+    color: var(--accent-secondary);
+    border-color: rgba(99,102,241,0.25);
+}
+.btn-cta.is-copy:hover { background: rgba(99,102,241,0.12); }
+.btn-cta.is-copy.copied { background: rgba(22,163,74,0.15); border-color: rgba(22,163,74,0.5); color: #166534; }
+
+.contact-note {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Secondary info card with direct links */
+.contact-info { margin-top: 22px; }
+.info-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-glass);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(99,102,241,0.18);
+}
+.info-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.info-card ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+.info-card li span { margin-right: 8px; }
+
+/* Dark mode sync with code block */
+body.is-dark-mode .contact-cta,
+body.is-dark-mode .info-card {
+    background: rgba(2, 6, 23, 0.9);
+    border-color: rgba(148,163,184,0.25);
+    box-shadow: 0 30px 70px rgba(2,6,23,0.6);
+}
+body.is-dark-mode .btn-cta {
+    background: rgba(2, 6, 23, 0.85);
+    color: #e2e8f0;
+    border-color: rgba(148,163,184,0.25);
+}
+body.is-dark-mode .btn-cta:hover {
+    box-shadow: 0 20px 45px rgba(2,6,23,0.6);
+}
+
+
+/* (Removed legacy light footer styles to avoid conflicts with the new Footer v2 defined above) */
 
 /* =========================================================
    RESPONSIVE DESIGN – MOBILE & TABLET
@@ -694,6 +1407,16 @@ body.is-dark-mode .nav-links a::after {
 
     .hero-text {
         max-width: 100%;
+    }
+
+    /* Contact layout stacks on tablets */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .contact-card,
+    .info-card {
+        padding: 24px;
     }
 
 }
@@ -787,6 +1510,18 @@ body.is-dark-mode .nav-links a::after {
     .project-card {
         padding: 26px;
     }
+
+    /* Contact: single column fields */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .form-actions {
+        flex-wrap: wrap;
+    }
+    .btn-secondary {
+        padding: 10px 18px;
+    }
 }
 
 
@@ -815,10 +1550,7 @@ body.is-dark-mode .nav-links a::after {
         font-size: 1.05rem;
     }
 
-    .footer {
-        padding: 32px 0;
-        font-size: 0.8rem;
-    }
+    /* (Removed legacy mobile override for old footer) */
 }
 
 

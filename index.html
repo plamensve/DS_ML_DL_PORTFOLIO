@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 
 <header class="header">
     <div class="container nav">
@@ -96,21 +96,56 @@
 <section id="skills" class="section section-alt">
     <div class="container">
         <h2>Technical Skills</h2>
+        <p class="section-lead">A focused toolkit for building data-driven and AI solutions.</p>
 
         <div class="skills-grid">
             <div class="skill-card">
-                <h3>Data Science</h3>
-                <p>Python, Pandas, NumPy, Data Visualization, Statistics</p>
+                <div class="skill-head">
+                    <h3>📊 Data Science</h3>
+                    <span class="skill-badge">Core</span>
+                </div>
+                <ul class="skill-chips" aria-label="Data Science stack">
+                    <li class="chip">Python</li>
+                    <li class="chip">Pandas</li>
+                    <li class="chip">NumPy</li>
+                    <li class="chip">Data Viz</li>
+                    <li class="chip">Statistics</li>
+                </ul>
+                <div class="meter" aria-hidden="true">
+                    <span style="--value: 88%"></span>
+                </div>
             </div>
 
             <div class="skill-card">
-                <h3>Machine Learning</h3>
-                <p>Scikit-learn, Feature Engineering, Model Evaluation</p>
+                <div class="skill-head">
+                    <h3>🤖 Machine Learning</h3>
+                    <span class="skill-badge is-secondary">Applied</span>
+                </div>
+                <ul class="skill-chips" aria-label="Machine Learning stack">
+                    <li class="chip">scikit-learn</li>
+                    <li class="chip">Feature Eng.</li>
+                    <li class="chip">Model Eval</li>
+                    <li class="chip">Cross-Validation</li>
+                </ul>
+                <div class="meter" aria-hidden="true">
+                    <span style="--value: 84%"></span>
+                </div>
             </div>
 
             <div class="skill-card">
-                <h3>Deep Learning</h3>
-                <p>PyTorch, Neural Networks, CNNs, Model Training</p>
+                <div class="skill-head">
+                    <h3>🧠 Deep Learning</h3>
+                    <span class="skill-badge is-tertiary">In Practice</span>
+                </div>
+                <ul class="skill-chips" aria-label="Deep Learning stack">
+                    <li class="chip">PyTorch</li>
+                    <li class="chip">Neural Nets</li>
+                    <li class="chip">CNNs</li>
+                    <li class="chip">Training & Tuning</li>
+                </ul>
+                <div class="meter" aria-hidden="true">
+                    <span style="--value: 78%"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -119,47 +154,91 @@
 <section id="projects" class="section">
     <div class="container">
         <h2>Personal Projects</h2>
+        <p class="section-lead">Selected case studies that demonstrate end‑to‑end thinking and practical impact.</p>
 
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="project-meta">
-                    <span class="project-tag">Machine Learning</span>
+        <!-- How to add a project:
+             1) Duplicate an <article class="case-study"> block below
+             2) Replace the <img> src and alt, update title/summary
+             3) Edit tech tags inside <ul class="tech-tags"> and the meta list
+             4) Point the CTA href to your repo, notebook or live demo -->
+        <div class="projects-list projects-reveal" aria-label="Case studies">
+            <article class="case-study">
+                <div class="case-media">
+                    <div class="case-art art--risk" aria-hidden="true"></div>
                 </div>
-                <h3>Heart Disease Risk Analysis</h3>
-                <p>
-                    Comparative analysis of two independent medical datasets
-                    to identify key risk factors for heart disease.
-                </p>
-                <div class="project-footer">
-                    <a href="#" class="project-link">View Project</a>
+                <div class="case-body">
+                    <h3 class="case-title">Heart Disease Risk Analysis</h3>
+                    <p class="case-summary">
+                        Comparative analysis across two independent medical datasets to uncover the
+                        strongest predictors for heart disease and build a reliable risk score.
+                    </p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">Python</li>
+                        <li class="tag">Pandas</li>
+                        <li class="tag">scikit‑learn</li>
+                        <li class="tag is-info">EDA</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> Data Scientist</li>
+                        <li><span>Stack:</span> Stats · ML · Viz</li>
+                        <li><span>Year:</span> 2025</li>
+                    </ul>
+                    <div class="case-cta">
+                        <a href="#" class="btn-outline" aria-label="Open project Heart Disease Risk Analysis">View Project</a>
+                    </div>
                 </div>
             </article>
 
-            <article class="project-card">
-                <div class="project-meta">
-                    <span class="project-tag">Deep Learning</span>
+            <article class="case-study">
+                <div class="case-media">
+                    <div class="case-art art--seg" aria-hidden="true"></div>
                 </div>
-                <h3>Medical Image Segmentation</h3>
-                <p>
-                    CNN-based segmentation model trained on medical imaging data
-                    for organ and tissue detection.
-                </p>
-                <div class="project-footer">
-                    <a href="#" class="project-link">View Project</a>
+                <div class="case-body">
+                    <h3 class="case-title">Medical Image Segmentation</h3>
+                    <p class="case-summary">
+                        CNN‑based segmentation for organ and tissue detection. Trained with modern
+                        augmentation, monitored with dice/IoU metrics, and optimized for inference.
+                    </p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">PyTorch</li>
+                        <li class="tag">CNN</li>
+                        <li class="tag is-success">Computer Vision</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> DL Engineer</li>
+                        <li><span>Stack:</span> PyTorch · Albumentations</li>
+                        <li><span>Year:</span> 2025</li>
+                    </ul>
+                    <div class="case-cta">
+                        <a href="#" class="btn-outline" aria-label="Open project Medical Image Segmentation">View Project</a>
+                    </div>
                 </div>
             </article>
 
-            <article class="project-card">
-                <div class="project-meta">
-                    <span class="project-tag">Data Science</span>
+            <article class="case-study">
+                <div class="case-media">
+                    <div class="case-art art--eda" aria-hidden="true"></div>
                 </div>
-                <h3>Exploratory Data Analysis Toolkit</h3>
-                <p>
-                    Automated EDA pipeline with statistical summaries,
-                    visualizations, and correlation insights.
-                </p>
-                <div class="project-footer">
-                    <a href="#" class="project-link">View Project</a>
+                <div class="case-body">
+                    <h3 class="case-title">Exploratory Data Analysis Toolkit</h3>
+                    <p class="case-summary">
+                        Reproducible EDA pipeline that automates profiles, correlations and
+                        visual narratives to speed up dataset understanding by 3×.
+                    </p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">Python</li>
+                        <li class="tag">NumPy</li>
+                        <li class="tag">Plotly</li>
+                        <li class="tag is-warning">Reports</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> Data Analyst</li>
+                        <li><span>Stack:</span> Pandas · Plotly</li>
+                        <li><span>Year:</span> 2024</li>
+                    </ul>
+                    <div class="case-cta">
+                        <a href="#" class="btn-outline" aria-label="Open project Exploratory Data Analysis Toolkit">View Project</a>
+                    </div>
                 </div>
             </article>
         </div>
@@ -169,19 +248,126 @@
 <section id="contact" class="section">
     <div class="container">
         <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: github.com/yourusername</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+
+        <div class="contact-cta">
+            <p class="contact-lead">Let’s connect. The fastest way is via email or LinkedIn.</p>
+
+            <div class="cta-buttons">
+                <a class="btn-cta is-email" href="mailto:svetoslavov.dev@gmail.com?subject=Portfolio%20contact">
+                    <span class="icon">📧</span>
+                    Email
+                </a>
+                <a class="btn-cta is-linkedin" href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                    <span class="icon">🔗</span>
+                    LinkedIn
+                </a>
+                <a class="btn-cta is-github" href="https://github.com/plamensve" target="_blank" rel="noopener" aria-label="GitHub profile">
+                    <span class="icon">🐙</span>
+                    GitHub
+                </a>
+                <button class="btn-cta is-copy" id="copy-email" type="button" aria-label="Copy email address">
+                    <span class="icon">📋</span>
+                    Copy email
+                </button>
+            </div>
+
+            <div class="contact-note">
+                <p>Prefer a quick call? I can share a calendar link on request. Typically reply within 24h.</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <div class="info-card">
+                <h3>Direct contacts</h3>
+                <ul>
+                    <li><span>📧</span> <a href="mailto:svetoslavov.dev@gmail.com">svetoslavov.dev@gmail.com</a></li>
+                    <li><span>🐙</span> <a href="https://github.com/plamensve" target="_blank" rel="noopener">github.com/plamensve</a></li>
+                    <li><span>🔗</span> <a href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener">linkedin.com/in/plamen-svetoslavov</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
 </section>
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="container">
-        <p>© 2026 Plamen Svetoslavov. All rights reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" aria-label="Site logo">DS·ML·DL</div>
+                <p class="tagline">Data, ML & DL projects crafted with care.</p>
+                <ul class="footer-badges" aria-label="Availability and timezone">
+                    <li class="badge">UTC+2</li>
+                    <li class="badge is-available">Available</li>
+                </ul>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h4>Get in touch</h4>
+                <ul class="social-list">
+                    <li>
+                        <a class="social-link is-email" href="mailto:svetoslavov.dev@gmail.com?subject=Portfolio%20contact" aria-label="Email Plamen">
+                            <span class="icon">📧</span>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-link is-linkedin" href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                            <span class="icon">🔗</span>
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-link is-github" href="https://github.com/plamensve" target="_blank" rel="noopener" aria-label="GitHub profile">
+                            <span class="icon">🐙</span>
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+                <p class="availability">Typically replies within 24h.</p>
+            </div>
+        </div>
+
+        <div class="legal-bar">
+            <p>© 2026 Plamen Svetoslavov. All rights reserved.</p>
+            <a href="#top" class="to-top" aria-label="Back to top">
+                <span class="to-top-icon" aria-hidden="true"></span>
+                Back to top
+            </a>
+        </div>
     </div>
 </footer>
 
 <script src="codeBlock.js" defer></script>
 <script src="skills.js" defer></script>
+<script src="projects.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('copy-email');
+    if (!copyBtn) return;
+    const email = 'svetoslavov.dev@gmail.com';
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.classList.add('copied');
+        const original = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="icon">✅</span> Copied';
+        setTimeout(() => { copyBtn.innerHTML = original; copyBtn.classList.remove('copied'); }, 1400);
+      } catch (e) {
+        window.prompt('Copy email manually:', email);
+      }
+    });
+  });
+</script>
 </body>
 </html>
