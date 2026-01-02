@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DS | ML | DL Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <div class="logo">DS·ML·DL</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+
+        <div class="hero-avatar">
+            <img src="media/main_photo.jpg" alt="Profile Avatar">
+        </div>
+
+        <div class="hero-text">
+            <h1>Data Science & Machine Learning Portfolio</h1>
+            <p>
+                Focused on data-driven solutions, statistical analysis,
+                machine learning models, and deep learning systems.
+            </p>
+            <a href="#projects" class="btn-primary">View Projects</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container">
+        <h2>About Me</h2>
+    </div>
+
+    <pre class="code-block"><code>
+        <span class="keyword">class</span> <span class="function">Developer</span>:
+            <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, name):
+                <span class="variable">self</span>.name = name
+                <span class="variable">self</span>.skills = [
+                    <span class="string">"Python"</span>,
+                    <span class="string">"Data Science"</span>,
+                    <span class="string">"Machine Learning"</span>,
+                    <span class="string">"Neural Networks"</span>,
+                    <span class="string">"Problem Solving"</span>,
+                    <span class="string">"Creative Thinking"</span>,
+                ]
+                <span class="variable">self</span>.mindset = <span class="string">"Learning by building"</span>
+                <span class="variable">self</span>.mission = <span class="string">"Master AI concepts and create real-world intelligent solutions."</span>
+                <span class="variable">self</span>.fun_fact = (
+                    <span class="string">"Started learning C# in 2015 and quit. "</span>
+                    <span class="string">"Rediscovered programming with Python in 2023 and unlocked a passion for AI!"</span>
+                )
+
+            <span class="keyword">def</span> <span class="function">current_focus</span>(<span class="variable">self</span>):
+                <span class="keyword">return</span> <span class="string">"Deepening knowledge in ML models, neural networks, and data analysis."</span>
+
+            <span class="keyword">def</span> <span class="function">introduction</span>(<span class="variable">self</span>):
+                <span class="function">print</span>(<span class="string">f"Hello! I'm {self.name}"</span>)
+                <span class="function">print</span>(<span class="string">"AI-driven developer passionate about data and intelligent systems."</span>)
+                <span class="function">print</span>(<span class="string">f"Skills: {', '.join(self.skills)}"</span>)
+                <span class="function">print</span>(<span class="string">f"Mindset: {self.mindset}"</span>)
+                <span class="function">print</span>(<span class="string">f"Mission: {self.mission}"</span>)
+                <span class="function">print</span>(<span class="string">f"Currently: {self.current_focus()}"</span>)
+                <span class="function">print</span>(<span class="string">f"Fun fact: {self.fun_fact}"</span>)
+
+        <span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+            me = <span class="function">Developer</span>(<span class="string">"Plamen Svetoslavov"</span>)
+            me.introduction()
+    </code></pre>
+</section>
+
+
+<section id="skills" class="section section-alt">
+    <div class="container">
+        <h2>Technical Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Data Science</h3>
+                <p>Python, Pandas, NumPy, Data Visualization, Statistics</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Machine Learning</h3>
+                <p>Scikit-learn, Feature Engineering, Model Evaluation</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Deep Learning</h3>
+                <p>PyTorch, Neural Networks, CNNs, Model Training</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of the project and the problem it solves.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of the project and the problem it solves.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Short description of the project and the problem it solves.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="section section-alt">
+    <div class="container">
+        <h2>Education & Courses</h2>
+        <p>
+            Overview of completed courses in Data Science,
+            Machine Learning, and Deep Learning.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Your Name. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="media/js/code-block.js"></script>
+</body>
+</html>
