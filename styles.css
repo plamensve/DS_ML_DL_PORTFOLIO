@@ -258,7 +258,6 @@ body.is-dark-mode .nav-links a::after {
     width: 100%;
     margin: 0 auto;
 
-    /* визуално спокойствие */
     transform: scaleX(0.95);
     transform-origin: center;
 
@@ -339,7 +338,6 @@ body.is-dark-mode .nav-links a::after {
     border-radius: 50%;
     filter: blur(90px);
 
-    /* същият anchor, леко различен мащаб */
     transform: translate(45%, -50%) scale(1.15);
 
     opacity: 0.5;
