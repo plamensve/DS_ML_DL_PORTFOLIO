@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ratio = entry.intersectionRatio;
 
             // ENTER
-            if (ratio > 0.85 && !isActive) {
+            if (ratio > 0.70 && !isActive) {
                 codeBlock.classList.add("is-active");
                 document.body.classList.add("is-dark-mode");
                 isActive = true;
