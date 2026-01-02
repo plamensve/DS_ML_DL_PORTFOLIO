@@ -7,14 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
         ([entry]) => {
 
-            if (entry.intersectionRatio >= 0.96 && !isActive) {
+            // ENTER
+            if (entry.isIntersecting && entry.intersectionRatio > 0.93 && !isActive) {
                 codeBlock.classList.add("is-active");
                 document.body.classList.add("is-dark-mode");
                 isActive = true;
             }
 
-            // EXIT: completely out
-            if (entry.intersectionRatio === 0 && isActive) {
+            // EXIT — ЕДИНСТВЕНО правилният начин
+            if (!entry.isIntersecting && isActive) {
                 codeBlock.classList.remove("is-active");
                 document.body.classList.remove("is-dark-mode");
                 isActive = false;
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
         {
-            threshold: [0, 0.96]
+            threshold: Array.from({ length: 100 }, (_, i) => i / 100)
         }
     );
 
