@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // EXIT
-            if (ratio < 0.95 && isActive) {
+            if (ratio < 0.3 && isActive) {
                 codeBlock.classList.remove("is-active");
                 document.body.classList.remove("is-dark-mode");
                 isActive = false;
