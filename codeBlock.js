@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
         ([entry]) => {
 
-            // ENTER: 90% visible
             if (entry.intersectionRatio >= 0.96 && !isActive) {
                 codeBlock.classList.add("is-active");
                 document.body.classList.add("is-dark-mode");
