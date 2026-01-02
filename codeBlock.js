@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isActive = false;
     }
 
-    // 🔑 INITIAL CHECK (ключовото)
+
     function checkInitialPosition() {
         const rect = codeBlock.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const ratio = visibleHeight / rect.height;
 
-        if (ratio >= 0.8) {
+        if (ratio >= 0.9) {
             activate();
         }
     }
@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const ratio = entry.intersectionRatio;
 
             // ENTER
-            if (ratio >= 0.8) {
+            if (ratio >= 0.9) {
                 activate();
             }
 
-            // EXIT – напълно извън viewport
+            // EXIT
             if (ratio === 0) {
                 deactivate();
             }
@@ -54,5 +54,5 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     observer.observe(codeBlock);
-    checkInitialPosition(); // 🔥 това решава проблема
+    checkInitialPosition();
 });
