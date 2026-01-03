@@ -1079,6 +1079,13 @@ html { scroll-behavior: smooth; }
               #f1f5f9;
 }
 
+.case-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  background: #f1f5f9;
+}
+
 .projects-list.projects-reveal.is-active .case-art {
   /* Crisp geometric shimmer */
   background:
