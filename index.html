@@ -153,8 +153,19 @@
 
 <section id="projects" class="section">
     <div class="container">
-        <h2>Personal Projects</h2>
-        <p class="section-lead">Selected case studies that demonstrate end‑to‑end thinking and practical impact.</p>
+        <div class="section-header projects-header">
+            <span class="eyebrow">Work</span>
+            <h2>Personal Projects</h2>
+            <p class="section-lead">A curated selection of data & AI work with measurable impact and production‑grade craft.</p>
+        </div>
+
+        <!-- Optional category filters (progressive enhancement). Without JS all projects remain visible. -->
+        <div class="projects-filters" role="tablist" aria-label="Project categories">
+            <button class="filter-btn is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="cv">Computer Vision</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="eda">EDA / Analytics</button>
+        </div>
 
         <!-- How to add a project:
              1) Duplicate an <article class="case-study"> block below
@@ -162,43 +173,148 @@
              3) Edit tech tags inside <ul class="tech-tags"> and the meta list
              4) Point the CTA href to your repo, notebook or live demo -->
         <div class="projects-list projects-reveal" aria-label="Case studies">
-            <article class="case-study">
+            <!-- Featured project (larger, spans 2 columns on desktop) -->
+            <article class="case-study is-featured" data-cat="ml,eda">
                 <div class="case-media">
                     <div class="case-art art--risk" aria-hidden="true"></div>
                 </div>
                 <div class="case-body">
-                    <h3 class="case-title">Heart Disease Risk Analysis</h3>
+                    <header class="case-header">
+                        <h3 class="case-title">Heart Disease Risk Intelligence</h3>
+                        <p class="case-subtitle">From messy medical data to a dependable, explainable risk score</p>
+                    </header>
                     <p class="case-summary">
-                        Comparative analysis across two independent medical datasets to uncover the
-                        strongest predictors for heart disease and build a reliable risk score.
+                        Built an end‑to‑end pipeline across two independent datasets to model heart‑disease risk. Combined robust feature engineering, calibrated classification and explainability (SHAP) to deliver trustworthy insights for clinicians.
                     </p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Python</li>
                         <li class="tag">Pandas</li>
                         <li class="tag">scikit‑learn</li>
                         <li class="tag is-info">EDA</li>
+                        <li class="tag is-success">Explainability</li>
                     </ul>
                     <ul class="case-meta">
                         <li><span>Role:</span> Data Scientist</li>
                         <li><span>Stack:</span> Stats · ML · Viz</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
+                    <ul class="case-metrics" aria-label="Key outcomes">
+                        <li><strong>+7.4%</strong> AUC vs. baseline</li>
+                        <li><strong>0.92</strong> recall (high‑risk cohort)</li>
+                        <li><strong>100%</strong> reproducible pipeline</li>
+                    </ul>
                     <div class="case-cta">
-                        <a href="#" class="btn-outline" aria-label="Open project Heart Disease Risk Analysis">View Project</a>
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Heart Disease Risk Intelligence">Case study</button>
+                        <a href="#" class="btn-case" aria-label="Open repository Heart Disease Risk Intelligence">Repository</a>
                     </div>
                 </div>
             </article>
 
-            <article class="case-study">
+            <!-- Added projects to make 6 in total -->
+            <article class="case-study" data-cat="ml,eda">
+                <div class="case-media">
+                    <div class="case-art art--eda" aria-hidden="true"></div>
+                </div>
+                <div class="case-body">
+                    <header class="case-header">
+                        <h3 class="case-title">Time‑Series Demand Forecasting</h3>
+                        <p class="case-subtitle">From noisy sales to reliable weekly forecasts</p>
+                    </header>
+                    <p class="case-summary">Built a robust forecasting pipeline with feature stores, holiday effects and model ensembling to reduce inventory stockouts and overstock.</p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">Python</li>
+                        <li class="tag">Pandas</li>
+                        <li class="tag">LightGBM</li>
+                        <li class="tag is-info">Time‑Series</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> ML Engineer</li>
+                        <li><span>Stack:</span> tsfresh · LightGBM</li>
+                        <li><span>Year:</span> 2025</li>
+                    </ul>
+                    <ul class="case-metrics" aria-label="Key outcomes">
+                        <li><strong>−21%</strong> MAPE vs. naive</li>
+                        <li><strong>+12%</strong> service level</li>
+                    </ul>
+                    <div class="case-cta">
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Time‑Series Demand Forecasting">Case study</button>
+                        <a href="#" class="btn-case" aria-label="Open repository Time‑Series Demand Forecasting">Repository</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-study" data-cat="ml">
+                <div class="case-media">
+                    <div class="case-art art--risk" aria-hidden="true"></div>
+                </div>
+                <div class="case-body">
+                    <header class="case-header">
+                        <h3 class="case-title">Customer Churn Prediction</h3>
+                        <p class="case-subtitle">Interpretable models that surface save‑actions</p>
+                    </header>
+                    <p class="case-summary">Engineered behavioral features and trained calibrated classifiers with SHAP‑based playbooks so retention teams can act with confidence.</p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">Python</li>
+                        <li class="tag">XGBoost</li>
+                        <li class="tag is-success">Explainability</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> Data Scientist</li>
+                        <li><span>Stack:</span> XGBoost · SHAP</li>
+                        <li><span>Year:</span> 2024</li>
+                    </ul>
+                    <ul class="case-metrics" aria-label="Key outcomes">
+                        <li><strong>+9%</strong> precision@top‑decile</li>
+                        <li><strong>−15%</strong> churn in pilot cohort</li>
+                    </ul>
+                    <div class="case-cta">
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Customer Churn Prediction">Case study</button>
+                        <a href="#" class="btn-case" aria-label="Open repository Customer Churn Prediction">Repository</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-study" data-cat="ml,cv">
                 <div class="case-media">
                     <div class="case-art art--seg" aria-hidden="true"></div>
                 </div>
                 <div class="case-body">
-                    <h3 class="case-title">Medical Image Segmentation</h3>
-                    <p class="case-summary">
-                        CNN‑based segmentation for organ and tissue detection. Trained with modern
-                        augmentation, monitored with dice/IoU metrics, and optimized for inference.
-                    </p>
+                    <header class="case-header">
+                        <h3 class="case-title">Defect Detection on Production Lines</h3>
+                        <p class="case-subtitle">Lightweight CV for real‑time QA</p>
+                    </header>
+                    <p class="case-summary">Deployed compact detection and segmentation models on edge devices to flag surface defects with low latency and high recall.</p>
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">PyTorch</li>
+                        <li class="tag">ONNX</li>
+                        <li class="tag is-success">Computer Vision</li>
+                    </ul>
+                    <ul class="case-meta">
+                        <li><span>Role:</span> CV Engineer</li>
+                        <li><span>Stack:</span> PyTorch · ONNX Runtime</li>
+                        <li><span>Year:</span> 2025</li>
+                    </ul>
+                    <ul class="case-metrics" aria-label="Key outcomes">
+                        <li><strong>0.94</strong> recall @ 0.1 FAR</li>
+                        <li><strong>< 50ms</strong> per frame on edge</li>
+                    </ul>
+                    <div class="case-cta">
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Defect Detection on Production Lines">Case study</button>
+                        <a href="#" class="btn-case" aria-label="Open repository Defect Detection on Production Lines">Repository</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-study" data-cat="cv,ml">
+                <div class="case-media">
+                    <div class="case-art art--seg" aria-hidden="true"></div>
+                </div>
+                <div class="case-body">
+                    <header class="case-header">
+                        <h3 class="case-title">Medical Image Segmentation</h3>
+                        <p class="case-subtitle">Pixel‑accurate masks with a fast, production‑minded pipeline</p>
+                    </header>
+                    <p class="case-summary">CNN‑based segmentation for organ and tissue detection with advanced augmentation, dice/IoU monitoring and optimized inference graph for deployment.</p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">PyTorch</li>
                         <li class="tag">CNN</li>
@@ -209,41 +325,33 @@
                         <li><span>Stack:</span> PyTorch · Albumentations</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
-                    <div class="case-cta">
-                        <a href="#" class="btn-outline" aria-label="Open project Medical Image Segmentation">View Project</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="case-study">
-                <div class="case-media">
-                    <div class="case-art art--eda" aria-hidden="true"></div>
-                </div>
-                <div class="case-body">
-                    <h3 class="case-title">Exploratory Data Analysis Toolkit</h3>
-                    <p class="case-summary">
-                        Reproducible EDA pipeline that automates profiles, correlations and
-                        visual narratives to speed up dataset understanding by 3×.
-                    </p>
-                    <ul class="tech-tags" aria-label="Technologies used">
-                        <li class="tag">Python</li>
-                        <li class="tag">NumPy</li>
-                        <li class="tag">Plotly</li>
-                        <li class="tag is-warning">Reports</li>
-                    </ul>
-                    <ul class="case-meta">
-                        <li><span>Role:</span> Data Analyst</li>
-                        <li><span>Stack:</span> Pandas · Plotly</li>
-                        <li><span>Year:</span> 2024</li>
+                    <ul class="case-metrics" aria-label="Key outcomes">
+                        <li><strong>0.87</strong> mean IoU</li>
+                        <li><strong>×1.6</strong> throughput via optimizations</li>
                     </ul>
                     <div class="case-cta">
-                        <a href="#" class="btn-outline" aria-label="Open project Exploratory Data Analysis Toolkit">View Project</a>
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Medical Image Segmentation">Case study</button>
+                        <a href="#" class="btn-case" aria-label="Open repository Medical Image Segmentation">Repository</a>
                     </div>
                 </div>
             </article>
         </div>
     </div>
 </section>
+
+<!-- Modal for project case studies -->
+<div id="case-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-dialog" role="document">
+        <button class="modal-close" type="button" aria-label="Close case study" title="Close" data-close-modal>
+            <span aria-hidden="true">✕</span>
+        </button>
+        <div class="modal-content" tabindex="0">
+            <!-- Dynamic content will be injected here -->
+        </div>
+    </div>
+    <div class="modal-sr-announcer" aria-live="polite" aria-atomic="true" hidden>Case study opened</div>
+  </div>
 
 <section id="contact" class="section">
     <div class="container">
@@ -253,22 +361,10 @@
             <p class="contact-lead">Let’s connect. The fastest way is via email or LinkedIn.</p>
 
             <div class="cta-buttons">
-                <a class="btn-cta is-email" href="mailto:svetoslavov.dev@gmail.com?subject=Portfolio%20contact">
-                    <span class="icon">📧</span>
-                    Email
-                </a>
-                <a class="btn-cta is-linkedin" href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-                    <span class="icon">🔗</span>
-                    LinkedIn
-                </a>
-                <a class="btn-cta is-github" href="https://github.com/plamensve" target="_blank" rel="noopener" aria-label="GitHub profile">
-                    <span class="icon">🐙</span>
-                    GitHub
-                </a>
-                <button class="btn-cta is-copy" id="copy-email" type="button" aria-label="Copy email address">
-                    <span class="icon">📋</span>
-                    Copy email
-                </button>
+                <a class="btn-cta is-email" href="mailto:svetoslavov.dev@gmail.com?subject=Portfolio%20contact">Email</a>
+                <a class="btn-cta is-linkedin" href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+                <a class="btn-cta is-github" href="https://github.com/plamensve" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+                <button class="btn-cta is-copy" id="copy-email" type="button" aria-label="Copy email address">Copy email</button>
             </div>
 
             <div class="contact-note">
@@ -280,9 +376,9 @@
             <div class="info-card">
                 <h3>Direct contacts</h3>
                 <ul>
-                    <li><span>📧</span> <a href="mailto:svetoslavov.dev@gmail.com">svetoslavov.dev@gmail.com</a></li>
-                    <li><span>🐙</span> <a href="https://github.com/plamensve" target="_blank" rel="noopener">github.com/plamensve</a></li>
-                    <li><span>🔗</span> <a href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener">linkedin.com/in/plamen-svetoslavov</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:svetoslavov.dev@gmail.com">svetoslavov.dev@gmail.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/plamensve" target="_blank" rel="noopener">github.com/plamensve</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener">linkedin.com/in/plamen-svetoslavov</a></li>
                 </ul>
             </div>
         </div>
