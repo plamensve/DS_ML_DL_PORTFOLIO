@@ -1575,81 +1575,127 @@ body.is-dark-mode .modal-close { background: rgba(2,6,23,0.85); color: #e2e8f0; 
 
 /* ================= CONTACT ================= */
 
-/* Full-width professional band for Contact section, visually merging into the footer */
-#contact.section {
-    /* Stick to footer already handled below with padding-bottom: 0 */
-    /* Create a full-bleed visual band while keeping content centered via .container */
-    position: relative;
-    background:
-        radial-gradient(120% 140% at 10% -10%, rgba(103,232,249,0.10) 0%, rgba(0,0,0,0) 60%),
-        linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
-    border-top: 1px solid var(--border-glass);
-    padding: 96px 0 0; /* generous top rhythm, bottom is 0 to stick to footer */
+.section-contact {
+    background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+    padding: 96px 0 0;
+    overflow: hidden;
 }
 
-/* Ensure text over the dark band remains readable while cards keep their own styling */
-#contact h2 {
-    color: #e6fbff; /* light cyan-tinted heading for better contrast on dark */
+/* Header zone */
+.contact-top {
+    padding-bottom: 160px;
 }
 
-/* Center the Contact section content for a balanced, professional layout */
-#contact h2,
-#contact .contact-lead,
-#contact .contact-note { text-align: center; }
-
-/* Provide inner bottom breathing room so content isn't glued to the footer,
-   while keeping the full-bleed background flush with the footer */
-#contact .container { padding-bottom: 56px; }
-
-/* Center CTA grid items and cards */
-.cta-buttons { justify-items: center; }
-.contact-cta,
-.info-card { max-width: 960px; margin-inline: auto; }
-
-@media (max-width: 900px) {
-    #contact .container { padding-bottom: 48px; }
-}
-@media (max-width: 640px) {
-    #contact .container { padding-bottom: 40px; }
+.contact-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-/* Keep the contact content above any decorative layers */
-#contact .container { position: relative; z-index: 1; }
-
-/* Optional subtle grid, softer than footer, for a cohesive system look */
-#contact.section::after {
-    content: "";
-    position: absolute; inset: 0;
-    pointer-events: none;
-    background-image:
-        repeating-linear-gradient(0deg, rgba(103,232,249,0.035) 0 1px, transparent 1px 44px),
-        repeating-linear-gradient(90deg, rgba(103,232,249,0.035) 0 1px, transparent 1px 44px);
-    opacity: 0.5;
-    mix-blend-mode: overlay;
-}
-
-.contact-cta {
-    background: var(--card-bg);
-    backdrop-filter: blur(14px);
-    border: 1px solid var(--border-glass);
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 20px 50px rgba(99,102,241,0.18);
-    margin-top: 28px;
-}
-
-.contact-lead {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin-bottom: 18px;
-}
-
-.cta-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+.contact-header h2 {
+    color: #e6fbff;
     margin-bottom: 12px;
 }
+
+.contact-subtitle {
+    color: #94a3b8;
+    font-size: 1.05rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    margin: -120px auto 80px;
+    max-width: 1920px;
+    width: 100%;
+}
+
+/* Cards */
+.contact-card {
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.contact-card h3 {
+    color: #f8fafc;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    color: #cbd5e1;
+    margin-bottom: 24px;
+}
+
+/* Actions */
+.contact-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: #0b1220;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    color: #e6fbff;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Contact list */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    margin-bottom: 16px;
+}
+
+.contact-list span {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.contact-list a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    color: #7dd3fc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        margin-top: -96px;
+    }
+}
+
+
 
 /* Better responsiveness for CTA buttons on narrower widths */
 @media (max-width: 900px) {
