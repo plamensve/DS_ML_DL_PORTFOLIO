@@ -53,44 +53,44 @@
     <div class="container">
         <h2>About Me</h2>
     </div>
+        <pre class="code-block">
+            <code class="code-content">
+            <span class="keyword kw-class">class</span> <span class="function">Developer</span>:
+                <span class="keyword kw-def">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, name):
+                    <span class="variable">self</span>.name = name
+                    <span class="variable">self</span>.skills = [
+                        <span class="string">"Python"</span>,
+                        <span class="string">"Data Science"</span>,
+                        <span class="string">"Machine Learning"</span>,
+                        <span class="string">"Neural Networks"</span>,
+                        <span class="string">"Problem Solving"</span>,
+                        <span class="string">"Creative Thinking"</span>,
+                    ]
+                    <span class="variable">self</span>.mindset = <span class="string">"Learning by building"</span>
+                    <span class="variable">self</span>.mission = <span class="string">"Master AI concepts and create real-world intelligent solutions."</span>
+                    <span class="variable">self</span>.fun_fact = (
+                        <span class="string">"Started learning C# in 2015 and quit. "</span>
+                        <span class="string">"Rediscovered programming with Python in 2023 and unlocked a passion for AI!"</span>
+                    )
 
-    <pre class="code-block">
-<code class="code-content">
-<span class="keyword">class</span> <span class="function">Developer</span>:
-    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, name):
-        <span class="variable">self</span>.name = name
-        <span class="variable">self</span>.skills = [
-            <span class="string">"Python"</span>,
-            <span class="string">"Data Science"</span>,
-            <span class="string">"Machine Learning"</span>,
-            <span class="string">"Neural Networks"</span>,
-            <span class="string">"Problem Solving"</span>,
-            <span class="string">"Creative Thinking"</span>,
-        ]
-        <span class="variable">self</span>.mindset = <span class="string">"Learning by building"</span>
-        <span class="variable">self</span>.mission = <span class="string">"Master AI concepts and create real-world intelligent solutions."</span>
-        <span class="variable">self</span>.fun_fact = (
-            <span class="string">"Started learning C# in 2015 and quit. "</span>
-            <span class="string">"Rediscovered programming with Python in 2023 and unlocked a passion for AI!"</span>
-        )
+                <span class="keyword kw-def">def</span> <span class="function">current_focus</span>(<span class="variable">self</span>):
+                    <span class="keyword kw-return">return</span>
+                    <span class="string">"Deepening knowledge in ML models, neural networks, and data analysis."</span>
 
-    <span class="keyword">def</span> <span class="function">current_focus</span>(<span class="variable">self</span>):
-        <span class="keyword">return</span> <span class="string">"Deepening knowledge in ML models, neural networks, and data analysis."</span>
+                <span class="keyword kw-def">def</span> <span class="function">introduction</span>(<span class="variable">self</span>):
+                    <span class="variable">print</span>(<span class="string">f"Hello! I'm {self.name}"</span>)
+                    <span class="variable">print</span>(<span class="string">"AI-driven developer passionate about data and intelligent systems."</span>)
+                    <span class="variable">print</span>(<span class="string">f"Skills: {', '.join(self.skills)}"</span>)
+                    <span class="variable">print</span>(<span class="string">f"Mindset: {self.mindset}"</span>)
+                    <span class="variable">print</span>(<span class="string">f"Mission: {self.mission}"</span>)
+                    <span class="variable">print</span>(<span class="string">f"Currently: {self.current_focus()}"</span>)
+                    <span class="variable">print</span>(<span class="string">f"Fun fact: {self.fun_fact}"</span>)
 
-    <span class="keyword">def</span> <span class="function">introduction</span>(<span class="variable">self</span>):
-        <span class="function">print</span>(<span class="string">f"Hello! I'm {self.name}"</span>)
-        <span class="function">print</span>(<span class="string">"AI-driven developer passionate about data and intelligent systems."</span>)
-        <span class="function">print</span>(<span class="string">f"Skills: {', '.join(self.skills)}"</span>)
-        <span class="function">print</span>(<span class="string">f"Mindset: {self.mindset}"</span>)
-        <span class="function">print</span>(<span class="string">f"Mission: {self.mission}"</span>)
-        <span class="function">print</span>(<span class="string">f"Currently: {self.current_focus()}"</span>)
-        <span class="function">print</span>(<span class="string">f"Fun fact: {self.fun_fact}"</span>)
-
-<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
-    me = <span class="function">Developer</span>(<span class="string">"Plamen Svetoslavov"</span>)
-    me.introduction()
-</code>
-    </pre>
+            <span class="keyword kw-if">if</span> __name__ == <span class="string">"__main__"</span>:
+                me = <span class="function">Developer</span>(<span class="string">"Plamen Svetoslavov"</span>)
+                me.introduction()
+            </code>
+        </pre>
 </section>
 
 

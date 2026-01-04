@@ -266,13 +266,9 @@ body.is-dark-mode .nav-links a::after {
 
 .code-block {
     position: relative;
-    overflow: hidden; /* 🔑 клипва декорацията */
+    overflow: hidden;
 
-    background: linear-gradient(
-        180deg,
-        #f8fafc,
-        #eef2ff
-    );
+    background: linear-gradient(180deg, #f8fafc, #eef2ff);
     color: #1e293b;
     padding: 32px;
     border-radius: 20px;
@@ -303,54 +299,19 @@ body.is-dark-mode .nav-links a::after {
 
 .code-block.is-active {
     transform: scaleX(1);
-
     background: #020617;
     color: #ffffff;
     border-radius: 0;
-
-    box-shadow:
-        0 40px 90px rgba(15,23,42,0.6);
+    box-shadow: 0 40px 90px rgba(15,23,42,0.6);
 }
 
-/* ================= DECORATION – GRID ================= */
-
-.code-block.is-active::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-
-    width: 420px;
-    height: 420px;
-
-    background:
-        linear-gradient(
-            rgba(99,102,241,0.22) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(99,102,241,0.22) 1px,
-            transparent 1px
-        );
-
-    background-size: 64px 64px;
-    border-radius: 36px;
-
-    transform: translate(45%, -50%) rotate(12deg);
-
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* ================= DECORATION – BLUR ACCENT ================= */
+/* ================= BLUR ACCENT ================= */
 
 .code-block.is-active::before {
     content: "";
     position: absolute;
     top: 50%;
-    right: 0;
+    right: -120px;
 
     width: 520px;
     height: 520px;
@@ -364,58 +325,90 @@ body.is-dark-mode .nav-links a::after {
     border-radius: 50%;
     filter: blur(90px);
 
-    transform: translate(45%, -50%) scale(1.15);
-
-    opacity: 0.5;
+    transform: translateY(-50%);
+    opacity: 0.55;
     pointer-events: none;
     z-index: 0;
+}
+
+/* ================= GRID ================= */
+
+.code-block.is-active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -40px;
+
+    width: 420px;
+    height: 420px;
+
+    background:
+        linear-gradient(rgba(99,102,241,0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.22) 1px, transparent 1px);
+
+    background-size: 64px 64px;
+    border-radius: 36px;
+
+    transform: translateY(-50%) rotate(12deg);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ================= CODE TEXT ================= */
 
 .code-block code {
     position: relative;
-    z-index: 1; /* над декорацията */
+    z-index: 3;
     color: inherit;
-    /* По-добро поведение на малки екрани */
     white-space: pre-wrap;
     word-break: break-word;
 }
 
-/* ================= SYNTAX – LIGHT ================= */
+/* ================= SYNTAX – COMMON ================= */
 
-.code-block .keyword {
-    color: #7c3aed;
-    font-weight: 700;
-}
-
-.code-block .string {
-    color: #0284c7;
+.code-block .function {
+    color: #f500bb;
     font-weight: 600;
 }
 
-.code-block .comment {
-    color: #64748b;
-    font-style: italic;
+.code-block .variable {
+    color: #5f7bf6;
     font-weight: 500;
 }
 
-/* ================= SYNTAX – DARK (ACTIVE) ================= */
-
-.code-block.is-active .keyword {
-    color: #c084fc;
+/* class */
+.code-block .keyword:first-child,
+.code-block .keyword.class {
+    color: #a78bfa;
 }
 
-.code-block.is-active .string {
-    color: #38bdf8;
+.code-block .keyword.kw-def {
+    color: #ffe133;
 }
 
-.code-block.is-active .comment {
-    color: #94a3b8;
+/* ================= DECORATION – FORMULA ================= */
+
+.code-block.is-active code::after {
+    content: "LBCE = −(1/n) ∑ [ yᵢ log(ŷᵢ) + (1 − yᵢ) log(1 − ŷᵢ) ]";
+
+    position: absolute;
+    left: 8%;
+    top: 58%;
+
+    transform: translateY(-50%) rotate(-4deg);
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.14);
+    white-space: nowrap;
+    pointer-events: none;
+
+    z-index: 2;
 }
-
-
-
 
 /* ===== TEXT ===== */
 .hero-text {
