@@ -1597,14 +1597,19 @@ body.is-dark-mode .modal-close { background: rgba(2,6,23,0.85); color: #e2e8f0; 
     margin-bottom: 12px;
 }
 
-.contact-subtitle {
-    color: #94a3b8;
+.contact-header > .contact-subtitle {
     font-size: 1.05rem;
+    font-style: italic;
+
+    background: linear-gradient(135deg, #38bdf8, #2b2fea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
     margin: -120px auto 80px;
     max-width: 1920px;
