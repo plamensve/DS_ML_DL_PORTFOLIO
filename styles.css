@@ -1612,11 +1612,13 @@ body.is-dark-mode .modal-close { background: rgba(2,6,23,0.85); color: #e2e8f0; 
     grid-template-columns: 1fr 1fr;
     gap: 32px;
 
-    margin: 0 auto 80px;
+    margin: 0 auto 10px;
     transform: translateY(-120px);
 
     max-width: 1920px;
     width: 100%;
+
+    padding-inline: 5vw;
 }
 
 /* Cards */
