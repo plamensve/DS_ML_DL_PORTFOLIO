@@ -1611,7 +1611,10 @@ body.is-dark-mode .modal-close { background: rgba(2,6,23,0.85); color: #e2e8f0; 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    margin: -120px auto 80px;
+
+    margin: 0 auto 80px;
+    transform: translateY(-120px);
+
     max-width: 1920px;
     width: 100%;
 }
