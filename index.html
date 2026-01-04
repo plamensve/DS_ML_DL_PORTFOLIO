@@ -199,7 +199,9 @@
             <!-- Featured project (larger, spans 2 columns on desktop) -->
             <article class="case-study is-featured" data-cat="ml,eda">
                 <div class="case-media">
-                    <img src="media/pic-card-1.png" alt="">
+                    <figure class="case-media-frame">
+                        <img src="media/pic-card-1.png" alt="">
+                    </figure>
                 </div>
                 <div class="case-body">
                     <header class="case-header">
@@ -242,7 +244,7 @@
             </article>
 
             <!-- Added projects to make 6 in total -->
-            <article class="case-study" data-cat="ml,eda">
+            <article class="case-study is-vertical" data-cat="ml,eda">
                 <div class="case-media">
                     <img src="media/pic-card-2.png" alt="">
                 </div>
@@ -279,33 +281,32 @@
                 </div>
             </article>
 
-            <article class="case-study" data-cat="ml">
+            <article class="case-study is-vertical" data-cat="ml">
                 <div class="case-media">
-                    <div class="case-art art--risk" aria-hidden="true"></div>
+                    <img src="media/1748951034931.jpg" alt="">
                 </div>
                 <div class="case-body">
                     <header class="case-header">
-                        <h3 class="case-title">Customer Churn Prediction</h3>
-                        <p class="case-subtitle">Interpretable models that surface save‑actions</p>
+                        <h3 class="case-title">GTA Manager</h3>
+                        <p class="case-subtitle">Django-based internal management platform developed as an educational project for learning and practicing full-stack web development.</p>
                     </header>
-                    <p class="case-summary">Engineered behavioral features and trained calibrated classifiers with SHAP‑based playbooks so retention teams can act with confidence.</p>
+                    <p class="case-summary">The platform is not deployed and was built solely for educational purposes.</p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Python</li>
-                        <li class="tag">XGBoost</li>
+                        <li class="tag">Django</li>
                         <li class="tag is-success">Explainability</li>
                     </ul>
                     <ul class="case-meta">
-                        <li><span>Role:</span> Data Scientist</li>
-                        <li><span>Stack:</span> XGBoost · SHAP</li>
+                        <li><span>Role:</span> Python Web Developer</li>
+                        <li><span>Stack:</span> Python · Django · PostgreSQL</li>
                         <li><span>Year:</span> 2024</li>
                     </ul>
-                    <ul class="case-metrics" aria-label="Key outcomes">
-                        <li><strong>+9%</strong> precision@top‑decile</li>
-                        <li><strong>−15%</strong> churn in pilot cohort</li>
-                    </ul>
                     <div class="case-cta">
-                        <button class="btn-case primary js-open-case" type="button" aria-label="Open case study Customer Churn Prediction">Case study</button>
-                        <a href="#" class="btn-case" aria-label="Open repository Customer Churn Prediction">Repository</a>
+                        <button class="btn-case primary js-open-case" type="button" aria-label="Django-based internal management platform">Case study</button>
+                        <a href="https://github.com/plamensve/GTA_MANAGER_DJANGO_PROJECT"
+                           class="btn-case"
+                           aria-label="Django-based internal management platform"
+                        target="_blank">Repository</a>
                     </div>
                 </div>
             </article>
@@ -380,7 +381,7 @@
     <div class="modal-overlay" data-close-modal></div>
     <div class="modal-dialog" role="document">
         <button class="modal-close" type="button" aria-label="Close case study" title="Close" data-close-modal>
-            <span aria-hidden="true">✕</span>
+            <span aria-hidden="true">X</span>
         </button>
         <div class="modal-content" tabindex="0">
             <!-- Dynamic content will be injected here -->
@@ -446,26 +447,6 @@
 
             <div class="footer-contact">
                 <h4>Get in touch</h4>
-                <ul class="social-list">
-                    <li>
-                        <a class="social-link is-email" href="mailto:svetoslavov.dev@gmail.com?subject=Portfolio%20contact" aria-label="Email Plamen">
-                            <span class="icon">📧</span>
-                            Email
-                        </a>
-                    </li>
-                    <li>
-                        <a class="social-link is-linkedin" href="https://www.linkedin.com/in/plamen-svetoslavov/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-                            <span class="icon">🔗</span>
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a class="social-link is-github" href="https://github.com/plamensve" target="_blank" rel="noopener" aria-label="GitHub profile">
-                            <span class="icon">🐙</span>
-                            GitHub
-                        </a>
-                    </li>
-                </ul>
                 <p class="availability">Typically replies within 24h.</p>
             </div>
         </div>
