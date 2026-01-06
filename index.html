@@ -56,8 +56,7 @@
             <a href="#projects" class="btn-primary">View Projects</a>
             <a href="media/cv/PLAMEN_SVETOSLAVOV_CV_P.pdf"
                class="btn-primary"
-               download="Plamen_Svetoslavov_CV.pdf"
-               onclick="incrementCV()">
+               download="Plamen_Svetoslavov_CV.pdf">
                Download CV
             </a>
         </div>
@@ -574,35 +573,6 @@
       }
     });
   });
-</script>
-
-<script>
-fetch("https://api.counterapi.dev/v2/plamen-svetoslavovs-team-2398/first-counter-2398", {
-  headers: {
-    "Authorization": "Bearer ut_G6yO7LOIO1Z0EHVNJsGJegpa7SqlQif41Uh6nH9G"
-  }
-})
-.then(res => res.json())
-.then(data => {
-  document.getElementById("cv-counter").textContent = data.value;
-})
-.catch(err => console.error("GET ERROR:", err));
-</script>
-<script>
-function incrementCV() {
-  fetch("https://api.counterapi.dev/v2/plamen-svetoslavovs-team-2398/first-counter-2398/up", {
-    method: "POST",
-    headers: {
-      "Authorization": "Bearer ut_G6yO7LOIO1Z0EHVNJsGJegpa7SqlQif41Uh6nH9G"
-    }
-  })
-  .then(res => res.json())
-  .then(data => {
-    // по желание: обновяване веднага
-    document.getElementById("cv-counter").textContent = data.value;
-  })
-  .catch(err => console.error("UP ERROR:", err));
-}
 </script>
 </body>
 </html>
