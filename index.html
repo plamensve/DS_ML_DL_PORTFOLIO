@@ -583,5 +583,17 @@ function incrementCV() {
     localStorage.setItem("cvDownloaded", "1");
 }
 </script>
+<script>
+const COUNTER_URL = "https://api.countapi.xyz/get/plamen-svetoslavov/cv-downloads";
+
+fetch(COUNTER_URL)
+  .then(response => response.json())
+  .then(data => {
+      const counter = document.getElementById("cv-counter");
+      if (counter) {
+          counter.textContent = data.value;
+      }
+  });
+</script>
 </body>
 </html>
