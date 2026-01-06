@@ -543,7 +543,7 @@
         <div class="legal-bar">
             <p>
                 © 2026 Plamen Svetoslavov. All rights reserved.
-                <span id="cv-counter" class="cv-counter">1</span>
+                <span id="cv-counter">0</span>
             </p>
 
             <a href="#top" class="to-top" aria-label="Back to top">
@@ -575,25 +575,34 @@
     });
   });
 </script>
-<script>
-function incrementCV() {
-    if (localStorage.getItem("cvDownloaded")) return;
 
-    fetch("https://api.countapi.xyz/hit/plamen-svetoslavov/cv-downloads");
-    localStorage.setItem("cvDownloaded", "1");
-}
+<script>
+fetch("https://api.counterapi.dev/v2/plamen-svetoslavovs-team-2398/first-counter-2398", {
+  headers: {
+    "Authorization": "Bearer ut_G6yO7LOIO1Z0EHVNJsGJegpa7SqlQif41Uh6nH9G"
+  }
+})
+.then(res => res.json())
+.then(data => {
+  document.getElementById("cv-counter").textContent = data.value;
+})
+.catch(err => console.error("GET ERROR:", err));
 </script>
 <script>
-const COUNTER_URL = "https://api.countapi.xyz/get/plamen-svetoslavov/cv-downloads";
-
-fetch(COUNTER_URL)
-  .then(response => response.json())
+function incrementCV() {
+  fetch("https://api.counterapi.dev/v2/plamen-svetoslavovs-team-2398/first-counter-2398/up", {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer ut_G6yO7LOIO1Z0EHVNJsGJegpa7SqlQif41Uh6nH9G"
+    }
+  })
+  .then(res => res.json())
   .then(data => {
-      const counter = document.getElementById("cv-counter");
-      if (counter) {
-          counter.textContent = data.value;
-      }
-  });
+    // по желание: обновяване веднага
+    document.getElementById("cv-counter").textContent = data.value;
+  })
+  .catch(err => console.error("UP ERROR:", err));
+}
 </script>
 </body>
 </html>
