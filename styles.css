@@ -2071,8 +2071,15 @@ body.is-dark-mode .btn-cta:hover {
     will-change: auto;
 }
 
+.hero h1 {
+    background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-
+.hero h1 .ds-hero {
+    -webkit-text-fill-color: #d59203;
+}
 
 
 
