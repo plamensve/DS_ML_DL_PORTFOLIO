@@ -2081,7 +2081,22 @@ body.is-dark-mode .btn-cta:hover {
     -webkit-text-fill-color: #d59203;
 }
 
+.legal-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.legal-bar p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cv-counter {
+    margin-left: 8px;
+    font-size: 12px;
+    opacity: 0.4;
+}
 
 
 

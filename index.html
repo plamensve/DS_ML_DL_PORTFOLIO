@@ -54,7 +54,12 @@
                 and modern web development.
             </p>
             <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="media/cv/PLAMEN_SVETOSLAVOV_CV_P.pdf" class="btn-primary" download="Plamen_Svetoslavov_CV.pdf">Download CV</a>
+            <a href="media/cv/PLAMEN_SVETOSLAVOV_CV_P.pdf"
+               class="btn-primary"
+               download="Plamen_Svetoslavov_CV.pdf"
+               onclick="incrementCV()">
+               Download CV
+            </a>
         </div>
 
     </div>
@@ -536,7 +541,11 @@
         </div>
 
         <div class="legal-bar">
-            <p>© 2026 Plamen Svetoslavov. All rights reserved.</p>
+            <p>
+                © 2026 Plamen Svetoslavov. All rights reserved.
+                <span id="cv-counter" class="cv-counter">1</span>
+            </p>
+
             <a href="#top" class="to-top" aria-label="Back to top">
                 <span class="to-top-icon" aria-hidden="true"></span>
                 Back to top
@@ -565,6 +574,14 @@
       }
     });
   });
+</script>
+<script>
+function incrementCV() {
+    if (localStorage.getItem("cvDownloaded")) return;
+
+    fetch("https://api.countapi.xyz/hit/plamen-svetoslavov/cv-downloads");
+    localStorage.setItem("cvDownloaded", "1");
+}
 </script>
 </body>
 </html>
