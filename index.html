@@ -216,6 +216,7 @@
             <button class="filter-btn" role="tab" aria-selected="false" data-filter="cv">Computer Vision</button>
             <button class="filter-btn" role="tab" aria-selected="false" data-filter="eda">EDA / Analytics</button>
             <button class="filter-btn" role="tab" aria-selected="false" data-filter="web">Web Development</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="od">Object detection</button>
         </div>
 
         <!-- How to add a project:
@@ -225,6 +226,54 @@
              4) Point the CTA href to your repo, notebook or live demo -->
         <div class="projects-list projects-reveal" aria-label="Case studies">
             <!-- Featured project (larger, spans 2 columns on desktop) -->
+
+            <article class="case-study is-vertical" data-cat="od">
+                <div class="case-media">
+                    <img src="media/od.jpg" alt="Object Detection Project Preview">
+                </div>
+                <div class="case-body">
+                    <header class="case-header">
+                        <h3 class="case-title">Object Detection with YOLO</h3>
+                        <p class="case-subtitle">
+                            Real-time product detection system built with the YOLO (You Only Look Once) architecture.
+                            The model predicts bounding boxes and class probabilities in a single forward pass,
+                            enabling fast and accurate multi-object detection.
+                        </p>
+                    </header>
+
+                    <p class="case-summary">
+                        This project focuses on training a custom YOLO model to detect and classify four product categories:
+                        Twix, Snickers, Bounty, and Mars.
+
+                        <br><br>
+
+                        <strong>Key Objectives:</strong><br>
+                        • Train a custom YOLO model on a labeled dataset<br>
+                        • Achieve precise bounding box localization<br>
+                        • Ensure high classification accuracy across all classes<br>
+                        • Support inference on images and video streams
+                    </p>
+
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">Python</li>
+                        <li class="tag">YOLO</li>
+                    </ul>
+
+                    <ul class="case-meta">
+                        <li><span>Role:</span> Python Engineer</li>
+                        <li><span>Stack:</span> Python · YOLO</li>
+                        <li><span>Year:</span> 2026</li>
+                    </ul>
+
+                    <div class="case-cta">
+                        <a href="https://github.com/plamensve/DL_OBJECT_DETECTION" class="btn-case primary" aria-label="Open repository Object Detection Project" target="_blank">
+                            View Repository
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
             <article class="case-study is-featured" data-cat="ml,eda">
                 <div class="case-media">
                     <figure class="case-media-frame">
