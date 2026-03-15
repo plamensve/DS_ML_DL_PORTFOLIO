@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBY5NBRDES"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-LBY5NBRDES');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-LBY5NBRDES');
     </script>
 
     <meta charset="UTF-8">
@@ -23,13 +27,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <meta property="og:title" content="Plamen Svetoslavov – DS, ML & DL Portfolio" />
-    <meta property="og:description" content="Explore my portfolio of Data Science, Machine Learning, and Deep Learning projects – showcasing experience, skills, and real-world applications." />
-    <meta property="og:image" content="https://plamensve.github.io/DS_ML_DL_PORTFOLIO/media/main_image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="627" />
-    <meta property="og:url" content="https://plamensve.github.io/DS_ML_DL_PORTFOLIO/" />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Plamen Svetoslavov – DS, ML & DL Portfolio"/>
+    <meta property="og:description"
+          content="Explore my portfolio of Data Science, Machine Learning, and Deep Learning projects – showcasing experience, skills, and real-world applications."/>
+    <meta property="og:image" content="https://plamensve.github.io/DS_ML_DL_PORTFOLIO/media/main_image.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="627"/>
+    <meta property="og:url" content="https://plamensve.github.io/DS_ML_DL_PORTFOLIO/"/>
+    <meta property="og:type" content="website"/>
 
 </head>
 <body id="top">
@@ -67,7 +72,7 @@
                class="btn-primary"
                id="increaseBtn"
                download="Plamen_Svetoslavov_CV.pdf">
-               Download CV
+                Download CV
             </a>
         </div>
 
@@ -78,7 +83,7 @@
     <div class="container">
         <h2>About Me</h2>
     </div>
-        <pre class="code-block">
+    <pre class="code-block">
             <code class="code-content">
             <span class="keyword kw-class">class</span> <span class="function">Developer</span>:
                 <span class="keyword kw-def">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, name):
@@ -98,11 +103,13 @@
                         <span class="string">"Rediscovered programming with Python in 2023 and unlocked a passion for AI!"</span>
                     )
 
-                <span class="keyword kw-def">def</span> <span class="function">current_focus</span>(<span class="variable">self</span>):
+                <span class="keyword kw-def">def</span> <span class="function">current_focus</span>(<span
+                    class="variable">self</span>):
                     <span class="keyword kw-return">return</span>
                     <span class="string">"Deepening knowledge in ML models, neural networks, and data analysis."</span>
 
-                <span class="keyword kw-def">def</span> <span class="function">introduction</span>(<span class="variable">self</span>):
+                <span class="keyword kw-def">def</span> <span class="function">introduction</span>(<span
+                    class="variable">self</span>):
                     <span class="variable">print</span>(<span class="string">f"Hello! I'm {self.name}"</span>)
                     <span class="variable">print</span>(<span class="string">"AI-driven developer passionate about data and intelligent systems."</span>)
                     <span class="variable">print</span>(<span class="string">f"Skills: {', '.join(self.skills)}"</span>)
@@ -122,7 +129,8 @@
 <section id="skills" class="section section-alt">
     <div class="container">
         <h2>Technical Skills</h2>
-        <p class="section-lead">Hands-on experience spanning Python backend development, data analysis, and applied AI workflows</p>
+        <p class="section-lead">Hands-on experience spanning Python backend development, data analysis, and applied AI
+            workflows</p>
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-head">
@@ -133,6 +141,7 @@
                     <li class="chip">Django</li>
                     <li class="chip">Django REST Framework</li>
                     <li class="chip">PostgreSQL</li>
+                    <li class="chip">Supabase</li>
                     <li class="chip">MongoDB</li>
                     <li class="chip">Firebase</li>
                     <li class="chip">ORM & Query Optimization</li>
@@ -142,6 +151,7 @@
                     <li class="chip">Nginx</li>
                     <li class="chip">CI/CD</li>
                     <li class="chip">Azure</li>
+                    <li class="chip">JavaScript</li>
                 </ul>
                 <div class="meter" aria-hidden="true">
                     <span style="--value: 98%"></span>
@@ -226,6 +236,62 @@
              4) Point the CTA href to your repo, notebook or live demo -->
         <div class="projects-list projects-reveal" aria-label="Case studies">
             <!-- Featured project (larger, spans 2 columns on desktop) -->
+            <article class="case-study is-vertical" data-cat="web">
+                <div class="case-media">
+                    <img src="media/goriva_online.png" alt="goriva.online">
+                </div>
+                <div class="case-body">
+                    <header class="case-header">
+                        <h3 class="case-title">goriva.online</h3>
+                        <p class="case-subtitle">
+                            Real-time fuel price tracking platform for Bulgaria.
+                            The website aggregates fuel price data from gas stations and visualizes it through tables,
+                            filters, and an interactive map, enabling users to quickly compare prices, find the cheapest
+                            stations, and explore fuel price trends across different regions and cities.
+                        </p>
+                    </header>
+
+                    <p class="case-summary">
+                        This project focuses on collecting and visualizing fuel price data from gas stations across
+                        Bulgaria.
+
+                        <br><br>
+
+                        <strong>Key Objectives:</strong><br>
+                        • Collect and aggregate fuel price data from gas stations<br>
+                        • Provide clear visualization of prices by region and city<br>
+                        • Enable users to quickly identify the cheapest fuel options<br>
+                        • Support community submissions to keep prices up to date
+                    </p>
+
+                    <ul class="tech-tags" aria-label="Technologies used">
+                        <li class="tag">JavaScript</li>
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">Supabase</li>
+                        <li class="tag">Google Analytics</li>
+                        <li class="tag">Google AdSense</li>
+                    </ul>
+
+                    <ul class="case-meta">
+                        <li><span>Role:</span>Web Developer</li>
+                        <li><span>Stack:</span> JS · HTML · CSS</li>
+                        <li><span>Year:</span> 2026</li>
+                    </ul>
+
+                    <div class="case-cta">
+                        <a href="https://github.com/plamensve/x_fuel.git" class="btn-case primary"
+                           aria-label="Open repository Object Detection Project" target="_blank">
+                            View Repository
+                        </a>
+                        <a href="https://goriva.online/" class="btn-case primary"
+                           aria-label="Visit Website" target="_blank">
+                            Visit Website
+                        </a>
+                    </div>
+                </div>
+            </article>
+
 
             <article class="case-study is-vertical" data-cat="od">
                 <div class="case-media">
@@ -242,7 +308,8 @@
                     </header>
 
                     <p class="case-summary">
-                        This project focuses on training a custom YOLO model to detect and classify four product categories:
+                        This project focuses on training a custom YOLO model to detect and classify four product
+                        categories:
                         Twix, Snickers, Bounty, and Mars.
 
                         <br><br>
@@ -266,7 +333,8 @@
                     </ul>
 
                     <div class="case-cta">
-                        <a href="https://github.com/plamensve/DL_OBJECT_DETECTION" class="btn-case primary" aria-label="Open repository Object Detection Project" target="_blank">
+                        <a href="https://github.com/plamensve/DL_OBJECT_DETECTION" class="btn-case primary"
+                           aria-label="Open repository Object Detection Project" target="_blank">
                             View Repository
                         </a>
                     </div>
@@ -282,8 +350,10 @@
                 </div>
                 <div class="case-body">
                     <header class="case-header">
-                        <h3 class="case-title">Comparative Analysis of Heart Disease Risk Factors and ML Model Performance</h3>
-                        <p class="case-subtitle">This project focuses on the analysis and comparison of two independent datasets related to heart disease, with two main objectives: </p>
+                        <h3 class="case-title">Comparative Analysis of Heart Disease Risk Factors and ML Model
+                            Performance</h3>
+                        <p class="case-subtitle">This project focuses on the analysis and comparison of two independent
+                            datasets related to heart disease, with two main objectives: </p>
                     </header>
                     <p class="case-summary">
                         <strong>Identifying and evaluating key risk factors</strong> associated with the disease,
@@ -305,16 +375,16 @@
                         <li><span>Stack:</span> Stats · ML · Viz</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
-<!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
-<!--                        <li><strong>+7.4%</strong> AUC vs. baseline</li>-->
-<!--                        <li><strong>0.92</strong> recall (high‑risk cohort)</li>-->
-<!--                        <li><strong>100%</strong> reproducible pipeline</li>-->
-<!--                    </ul>-->
+                    <!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
+                    <!--                        <li><strong>+7.4%</strong> AUC vs. baseline</li>-->
+                    <!--                        <li><strong>0.92</strong> recall (high‑risk cohort)</li>-->
+                    <!--                        <li><strong>100%</strong> reproducible pipeline</li>-->
+                    <!--                    </ul>-->
                     <div class="case-cta">
                         <a href="https://github.com/plamensve/DS_FINAL_PROJECT"
                            class="btn-case primary"
                            aria-label="Open repository Comparative Analysis of Heart Disease Risk Factors and ML Model Performance"
-                        target="_blank">Repository</a>
+                           target="_blank">Repository</a>
                     </div>
                 </div>
             </article>
@@ -327,7 +397,8 @@
                 <div class="case-body">
                     <header class="case-header">
                         <h3 class="case-title">Diabetes Prediction Using Health Indicators</h3>
-                        <p class="case-subtitle">This project focuses on building a machine learning model that predicts the
+                        <p class="case-subtitle">This project focuses on building a machine learning model that predicts
+                            the
                             likelihood of diabetes based on various health indicators.</p>
                     </header>
                     <p class="case-summary">The goal is to analyze, preprocess, and compare different feature sets
@@ -343,15 +414,15 @@
                         <li><span>Role:</span> ML Engineer</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
-<!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
-<!--                        <li><strong>−21%</strong> MAPE vs. naive</li>-->
-<!--                        <li><strong>+12%</strong> service level</li>-->
-<!--                    </ul>-->
+                    <!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
+                    <!--                        <li><strong>−21%</strong> MAPE vs. naive</li>-->
+                    <!--                        <li><strong>+12%</strong> service level</li>-->
+                    <!--                    </ul>-->
                     <div class="case-cta">
                         <a href="https://github.com/plamensve/diabets_health_indicators"
                            class="btn-case primary"
                            aria-label="Open repository Diabetes Prediction Using Health Indicators"
-                        target="_blank">Repository</a>
+                           target="_blank">Repository</a>
                     </div>
                 </div>
             </article>
@@ -363,13 +434,15 @@
                 <div class="case-body">
                     <header class="case-header">
                         <h3 class="case-title">GTA Manager</h3>
-                        <p class="case-subtitle">Django-based internal management platform developed as an educational project for learning and practicing full-stack web development.</p>
+                        <p class="case-subtitle">Django-based internal management platform developed as an educational
+                            project for learning and practicing full-stack web development.</p>
                     </header>
-                    <p class="case-summary">The platform is not deployed and was built solely for educational purposes.</p>
+                    <p class="case-summary">The platform is not deployed and was built solely for educational
+                        purposes.</p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Python</li>
                         <li class="tag">Django</li>
-<!--                    <li class="tag is-success">Explainability</li>-->
+                        <!--                    <li class="tag is-success">Explainability</li>-->
                     </ul>
                     <ul class="case-meta">
                         <li><span>Role:</span> Python Web Developer</li>
@@ -380,7 +453,7 @@
                         <a href="https://github.com/plamensve/GTA_MANAGER_DJANGO_PROJECT"
                            class="btn-case primary"
                            aria-label="Django-based internal management platform"
-                        target="_blank">Repository</a>
+                           target="_blank">Repository</a>
                     </div>
                 </div>
             </article>
@@ -392,9 +465,13 @@
                 <div class="case-body">
                     <header class="case-header">
                         <h3 class="case-title">K-means Clustering</h3>
-                        <p class="case-subtitle">A minimal and clear implementation of the K-Means clustering algorithm.</p>
+                        <p class="case-subtitle">A minimal and clear implementation of the K-Means clustering
+                            algorithm.</p>
                     </header>
-                    <p class="case-summary">The project demonstrates how to group data points into K clusters based on similarity, using iterative centroid updates until convergence. Includes data preprocessing, visualization of clusters, and configurable parameters such as number of clusters and initialization method.</p>
+                    <p class="case-summary">The project demonstrates how to group data points into K clusters based on
+                        similarity, using iterative centroid updates until convergence. Includes data preprocessing,
+                        visualization of clusters, and configurable parameters such as number of clusters and
+                        initialization method.</p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Pandas</li>
                         <li class="tag">Numpy</li>
@@ -404,12 +481,13 @@
                     <ul class="case-meta">
                         <li><span>Year:</span> 2025</li>
                     </ul>
-<!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
-<!--                        <li><strong>0.94</strong> recall @ 0.1 FAR</li>-->
-<!--                        <li><strong>< 50ms</strong> per frame on edge</li>-->
-<!--                    </ul>-->
+                    <!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
+                    <!--                        <li><strong>0.94</strong> recall @ 0.1 FAR</li>-->
+                    <!--                        <li><strong>< 50ms</strong> per frame on edge</li>-->
+                    <!--                    </ul>-->
                     <div class="case-cta">
-                        <a href="https://github.com/plamensve/k-means-clustering" class="btn-case primary" aria-label="Open repository Defect Detection on Production Lines">Repository</a>
+                        <a href="https://github.com/plamensve/k-means-clustering" class="btn-case primary"
+                           aria-label="Open repository Defect Detection on Production Lines">Repository</a>
                     </div>
                 </div>
             </article>
@@ -421,9 +499,14 @@
                 <div class="case-body">
                     <header class="case-header">
                         <h3 class="case-title">E-Stay Gen</h3>
-                        <p class="case-subtitle">Real Usage - XML Generator for the Bulgarian NRA (Electronic Transport Declarations for Stay - ETDS)</p>
+                        <p class="case-subtitle">Real Usage - XML Generator for the Bulgarian NRA (Electronic Transport
+                            Declarations for Stay - ETDS)</p>
                     </header>
-                    <p class="case-summary">E_STAY_GEN is a desktop Python application with a graphical interface that automatically generates XML files in compliance with the requirements of the Bulgarian National Revenue Agency (NRA) for stationary transport vehicles carrying fuel. The application extracts data from an input XML file (ETD), supplements it with address details provided by the user, and creates a new stayTransportDeclaration XML file.
+                    <p class="case-summary">E_STAY_GEN is a desktop Python application with a graphical interface that
+                        automatically generates XML files in compliance with the requirements of the Bulgarian National
+                        Revenue Agency (NRA) for stationary transport vehicles carrying fuel. The application extracts
+                        data from an input XML file (ETD), supplements it with address details provided by the user, and
+                        creates a new stayTransportDeclaration XML file.
                     </p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Python</li>
@@ -435,12 +518,13 @@
                         <li><span>Stack:</span> Python · Tkinter</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
-<!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
-<!--                        <li><strong>0.87</strong> mean IoU</li>-->
-<!--                        <li><strong>×1.6</strong> throughput via optimizations</li>-->
-<!--                    </ul>-->
+                    <!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
+                    <!--                        <li><strong>0.87</strong> mean IoU</li>-->
+                    <!--                        <li><strong>×1.6</strong> throughput via optimizations</li>-->
+                    <!--                    </ul>-->
                     <div class="case-cta">
-                        <a href="https://github.com/plamensve/E_STAY_GEN" class="btn-case primary" aria-label="Open repository Medical Image Segmentation">Repository</a>
+                        <a href="https://github.com/plamensve/E_STAY_GEN" class="btn-case primary"
+                           aria-label="Open repository Medical Image Segmentation">Repository</a>
                     </div>
                 </div>
             </article>
@@ -459,7 +543,10 @@
                         <p class="case-subtitle">License: MIT License</p>
                     </header>
                     <p class="case-summary">
-                        <strong>✅ What is Aurora Speech Extractor?</strong> Aurora Speech Extractor is a modern, feature-rich desktop application that converts speech from audio and video files into written text using advanced AI technology. Built with a beautiful, intuitive interface, it supports multiple output formats, real-time progress tracking, and drag-and-drop functionality.
+                        <strong>✅ What is Aurora Speech Extractor?</strong> Aurora Speech Extractor is a modern,
+                        feature-rich desktop application that converts speech from audio and video files into written
+                        text using advanced AI technology. Built with a beautiful, intuitive interface, it supports
+                        multiple output formats, real-time progress tracking, and drag-and-drop functionality.
                     </p>
                     <ul class="tech-tags" aria-label="Technologies used">
                         <li class="tag">Python</li>
@@ -471,16 +558,16 @@
                         <li><span>Role:</span>AI Engineer</li>
                         <li><span>Year:</span> 2025</li>
                     </ul>
-<!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
-<!--                        <li><strong>+7.4%</strong> AUC vs. baseline</li>-->
-<!--                        <li><strong>0.92</strong> recall (high‑risk cohort)</li>-->
-<!--                        <li><strong>100%</strong> reproducible pipeline</li>-->
-<!--                    </ul>-->
+                    <!--                    <ul class="case-metrics" aria-label="Key outcomes">-->
+                    <!--                        <li><strong>+7.4%</strong> AUC vs. baseline</li>-->
+                    <!--                        <li><strong>0.92</strong> recall (high‑risk cohort)</li>-->
+                    <!--                        <li><strong>100%</strong> reproducible pipeline</li>-->
+                    <!--                    </ul>-->
                     <div class="case-cta">
                         <a href="https://github.com/plamensve/AURORA_SPEECH_EXTRACTOR"
                            class="btn-case primary"
                            aria-label="Open repository Comparative Analysis of Heart Disease Risk Factors and ML Model Performance"
-                        target="_blank">Repository</a>
+                           target="_blank">Repository</a>
                     </div>
                 </div>
             </article>
@@ -489,7 +576,8 @@
 </section>
 
 <!-- Modal for project case studies -->
-<div id="case-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+<div id="case-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true"
+     aria-labelledby="case-modal-title">
     <div class="modal-overlay" data-close-modal></div>
     <div class="modal-dialog" role="document">
         <button class="modal-close" type="button" aria-label="Close case study" title="Close" data-close-modal>
@@ -500,7 +588,7 @@
         </div>
     </div>
     <div class="modal-sr-announcer" aria-live="polite" aria-atomic="true" hidden>Case study opened</div>
-  </div>
+</div>
 
 <section id="contact" class="section section-contact">
     <div class="container-1">
