@@ -1,35 +1,92 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  onValue,
-  runTransaction
-} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCK4sfpug2imOKkBLylWmIlyIAmtIxSldE",
-  authDomain: "portfolio-f4408.firebaseapp.com",
-  projectId: "portfolio-f4408",
-  databaseURL: "https://portfolio-f4408-default-rtdb.europe-west1.firebasedatabase.app",
-  storageBucket: "portfolio-f4408.firebasestorage.app",
-  messagingSenderId: "961129077522",
-  appId: "1:961129077522:web:3c3267163509e20af631cb"
-};
+// ========================================
+// SUPABASE CONFIGURATION
+// ========================================
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+const supabaseUrl = "https://eaqvhxfvozhzatrnbkvx.supabase.co";
+
+const supabaseKey =
+  "sb_publishable_u4ymkO5tFBauze0rVOkf-Q_kvbiIdwH";
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// ========================================
+// HTML ELEMENTS
+// ========================================
 
 const countLabel = document.getElementById("countLabel");
 const increaseBtn = document.getElementById("increaseBtn");
 
-const counterRef = ref(db, "cv_downloads");
+if (!countLabel) {
+  console.error('Element with ID "countLabel" was not found.');
+}
 
-onValue(counterRef, (snapshot) => {
-  countLabel.textContent = snapshot.val() ?? 0;
-});
+if (!increaseBtn) {
+  console.error('Element with ID "increaseBtn" was not found.');
+}
 
-increaseBtn.addEventListener("click", () => {
-  runTransaction(counterRef, (current) => {
-    return (current ?? 0) + 1;
+// ========================================
+// LOAD CURRENT DOWNLOAD COUNT
+// ========================================
+
+async function loadCvDownloads() {
+  if (!countLabel) {
+    return;
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from("portfolio_stats")
+      .select("stat_value")
+      .eq("stat_name", "cv_downloads")
+      .single();
+
+    if (error) {
+      throw error;
+    }
+
+    countLabel.textContent = data?.stat_value ?? 0;
+  } catch (error) {
+    console.error("Error loading CV download count:", error);
+    countLabel.textContent = "0";
+  }
+}
+
+// ========================================
+// INCREASE DOWNLOAD COUNT
+// ========================================
+
+async function increaseCvDownloads() {
+  try {
+    const { data, error } = await supabase.rpc(
+      "increment_cv_downloads"
+    );
+
+    if (error) {
+      throw error;
+    }
+
+    if (countLabel) {
+      countLabel.textContent = data ?? 0;
+    }
+  } catch (error) {
+    console.error("Error increasing CV download count:", error);
+  }
+}
+
+// ========================================
+// EVENT LISTENER
+// ========================================
+
+if (increaseBtn) {
+  increaseBtn.addEventListener("click", () => {
+    increaseCvDownloads();
   });
-});
+}
+
+// ========================================
+// INITIAL LOAD
+// ========================================
+
+loadCvDownloads();
